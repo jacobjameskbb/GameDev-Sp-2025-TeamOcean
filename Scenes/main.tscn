@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MainMenu" type="Control" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,6 +69,31 @@ offset_top = 0.0399933
 offset_right = -0.384018
 offset_bottom = -0.112
 text = "Quit"
+
+[node name="LoadGameMenu" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempBackground" type="ColorRect" parent="UI/LoadGameMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[node name="LineEdit" type="LineEdit" parent="UI/LoadGameMenu"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 304.0
+offset_right = 680.0
+offset_bottom = 335.0
+placeholder_text = "Enter load code"
 
 [connection signal="button_up" from="UI/MainMenu/Start" to="." method="_on_start_button_up"]
 [connection signal="button_up" from="UI/MainMenu/Load" to="." method="_on_load_button_up"]
