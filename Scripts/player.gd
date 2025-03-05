@@ -38,8 +38,8 @@ func _physics_process(delta):
 		
 		if jumping == false:
 			if velocity.y < TERMINALVELOCITY:
-				if velocity.y < 0:
-					velocity.y = 0
+				#if velocity.y < 0:
+				#	velocity.y /= 2
 				velocity.y += 1 * GRAVITY
 	
 	if Input.is_action_pressed(&"Left"):
