@@ -2,15 +2,15 @@ extends CharacterBody2D
 
 const GRAVITY = 2
 
-const TERMINALVELOCITY = 64
-
 const SPEED = 1
 
-var jump_speed = 32
+@export var terminal_velocity = 64
+
+@export var jump_speed = 32
+
+@export var max_jump_height = 32
 
 var jumping = false
-
-@export var max_jump_height = 33
 
 var initial_jump_height: float
 
@@ -37,7 +37,7 @@ func _physics_process(delta):
 			jumping = false
 		
 		if jumping == false:
-			if velocity.y < TERMINALVELOCITY:
+			if velocity.y < terminal_velocity:
 				#if velocity.y < 0:
 				#	velocity.y /= 2
 				velocity.y += 1 * GRAVITY
