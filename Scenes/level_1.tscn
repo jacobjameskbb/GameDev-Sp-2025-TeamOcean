@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://baq4ornxxwruv"]
+
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_wm267"]
+
+[sub_resource type="TileSet" id="TileSet_128k8"]
+
+[node name="Level 1" type="Node"]
+script = ExtResource("1_wm267")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_128k8")
+format = 2
