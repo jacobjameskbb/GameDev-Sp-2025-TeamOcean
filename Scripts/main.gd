@@ -9,7 +9,7 @@ extends Node
 var current_level: Node = null
 
 func _on_start_button_up():
-	pass
+	load_scene("73824691")
 
 
 func _on_load_button_up():
