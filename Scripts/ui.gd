@@ -19,4 +19,4 @@ func _on_load_back_button_up():
 
 
 func _on_load_start_button_up():
-	Global.load_scene($LoadGameMenu/LineEdit.text)
+	Global.load_scene(StringName($LoadGameMenu/LineEdit.text))

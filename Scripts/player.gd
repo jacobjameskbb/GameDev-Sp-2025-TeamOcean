@@ -16,9 +16,6 @@ var initial_jump_height: float
 
 var gravity_waiting = false
 
-func _process(_delta):
-	pass
-
 
 func _physics_process(delta):
 	velocity.x = 0
