@@ -4,23 +4,22 @@ const GRAVITY = 2
 
 const SPEED = 1
 
-@export var terminal_velocity = 64
+@export var terminal_velocity: int = 48
 
-@export var jump_speed = 64
+@export var jump_speed: int = 64
 
-var gravity_delay: float = 1.0 / terminal_velocity
+@export var seconds_per_gravity_increase: float = 1
+
+var gravity_delay: float = seconds_per_gravity_increase / terminal_velocity
 
 var initial_jump_height: float
 
 var gravity_waiting = false
 
-func _process(_delta):
-	pass
-
 
 func _physics_process(delta):
 	velocity.x = 0
-	print(velocity)
+	
 	if is_on_floor():
 		if velocity.y > 0:
 			velocity.y = 0
