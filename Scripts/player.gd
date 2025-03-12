@@ -8,8 +8,11 @@ const SPEED = 1
 
 @export var jump_speed = 64
 
+var gravity_delay: float = 1.0 / terminal_velocity
+
 var initial_jump_height: float
 
+var gravity_waiting = false
 
 func _process(_delta):
 	pass
@@ -27,8 +30,8 @@ func _physics_process(delta):
 			velocity += Vector2(0, -1 * jump_speed)
 	
 	else:
-		if velocity.y < terminal_velocity:
-			velocity.y += 1 * GRAVITY
+		if velocity.y < terminal_velocity and gravity_waiting == false:
+			increase_gravity()
 	
 	if Input.is_action_pressed(&"Left"):
 		velocity.x += -1 * delta * 5000
@@ -37,3 +40,13 @@ func _physics_process(delta):
 		velocity.x += 1 * delta * 5000
 	
 	move_and_slide()
+
+
+func increase_gravity():
+	gravity_waiting = true
+	
+	await get_tree().create_timer(gravity_delay).timeout
+	
+	gravity_waiting = false
+	
+	velocity.y += 1 * GRAVITY

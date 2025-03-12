@@ -8,6 +8,10 @@ extends Node
 
 var current_level: Node = null
 
+func _ready():
+	self.add_child(load("res://Scenes/ui.tscn").instantiate())
+
+
 func _on_start_button_up():
 	load_scene("73824691")
 
