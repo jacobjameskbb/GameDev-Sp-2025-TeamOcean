@@ -2,10 +2,10 @@ extends Node
 #for example
 #"ABCDEFGH" : 'res://Scenes/main.tscn',
 @onready var scene_keys: Dictionary = {
-	"73824691" : "res://Scenes/level_1.tscn"
+	&"73824691" : &"res://Scenes/level_1.tscn"
 }
 
-var current_scene: String
+var current_scene: StringName
 
 
 func load_scene(key):
