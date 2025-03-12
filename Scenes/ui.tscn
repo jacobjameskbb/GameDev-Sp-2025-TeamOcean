@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bcgcxbcgw3afb"]
+[gd_scene load_steps=2 format=3 uid="uid://bcgcxbcgw3afb"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7gdau"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7gdau")
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 1
@@ -83,11 +86,16 @@ grow_vertical = 2
 color = Color(0.509286, 0.509286, 0.509286, 1)
 
 [node name="LineEdit" type="LineEdit" parent="LoadGameMenu"]
-layout_mode = 0
-offset_left = 536.0
-offset_top = 304.0
-offset_right = 680.0
-offset_bottom = 335.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465
+anchor_top = 0.469
+anchor_right = 0.59
+anchor_bottom = 0.517
+offset_left = 0.319946
+offset_top = 0.0879822
+offset_right = 0.319946
+offset_bottom = -0.0160217
 placeholder_text = "Enter load code"
 
 [node name="LoadBack" type="Button" parent="LoadGameMenu"]
@@ -115,3 +123,9 @@ offset_top = -0.0880127
 offset_right = 0.319946
 offset_bottom = 0.159973
 text = "Load"
+
+[connection signal="button_up" from="MainMenu/Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="MainMenu/Load" to="." method="_on_load_button_up"]
+[connection signal="button_up" from="MainMenu/Quit" to="." method="_on_quit_button_up"]
+[connection signal="button_up" from="LoadGameMenu/LoadBack" to="." method="_on_load_back_button_up"]
+[connection signal="button_up" from="LoadGameMenu/LoadStart" to="." method="_on_load_start_button_up"]

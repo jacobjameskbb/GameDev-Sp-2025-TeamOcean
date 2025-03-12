@@ -11,11 +11,15 @@ config_version=5
 [application]
 
 config/name="Ocean"
-run/main_scene="res://Scenes/main.tscn"
+run/main_scene="res://Scenes/ui.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 run/stretch/mode="disabled"
 run/canvas_textures/default_texture_filter=1
+
+[autoload]
+
+Global="*res://Scripts/global.gd"
 
 [display]
 
