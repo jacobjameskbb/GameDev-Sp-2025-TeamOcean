@@ -1,20 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvvkqekg4ai3u"]
+[gd_scene load_steps=2 format=3 uid="uid://bcgcxbcgw3afb"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_rto5n"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7gdau"]
 
-[node name="Main" type="Node"]
-script = ExtResource("1_rto5n")
-
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7gdau")
 
-[node name="MainMenu" type="Control" parent="UI"]
-visible = false
+[node name="MainMenu" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TempBackground" type="ColorRect" parent="UI/MainMenu"]
+[node name="TempBackground" type="ColorRect" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.509286, 0.509286, 0.509286, 1)
 
-[node name="Start" type="Button" parent="UI/MainMenu"]
+[node name="Start" type="Button" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.056
@@ -44,7 +41,7 @@ offset_right = -0.384018
 offset_bottom = -0.304016
 text = "Start"
 
-[node name="Load" type="Button" parent="UI/MainMenu"]
+[node name="Load" type="Button" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.056
@@ -57,7 +54,7 @@ offset_right = -0.384018
 offset_bottom = -0.208008
 text = "Load"
 
-[node name="Quit" type="Button" parent="UI/MainMenu"]
+[node name="Quit" type="Button" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.056
@@ -70,7 +67,8 @@ offset_right = -0.384018
 offset_bottom = -0.112
 text = "Quit"
 
-[node name="LoadGameMenu" type="Control" parent="UI"]
+[node name="LoadGameMenu" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,7 +76,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TempBackground" type="ColorRect" parent="UI/LoadGameMenu"]
+[node name="TempBackground" type="ColorRect" parent="LoadGameMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,15 +85,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.509286, 0.509286, 0.509286, 1)
 
-[node name="LineEdit" type="LineEdit" parent="UI/LoadGameMenu"]
-layout_mode = 0
-offset_left = 536.0
-offset_top = 304.0
-offset_right = 680.0
-offset_bottom = 335.0
+[node name="LineEdit" type="LineEdit" parent="LoadGameMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465
+anchor_top = 0.469
+anchor_right = 0.59
+anchor_bottom = 0.517
+offset_left = 0.319946
+offset_top = 0.0879822
+offset_right = 0.319946
+offset_bottom = -0.0160217
 placeholder_text = "Enter load code"
 
-[node name="LoadBack" type="Button" parent="UI/LoadGameMenu"]
+[node name="LoadBack" type="Button" parent="LoadGameMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.056
@@ -108,7 +111,7 @@ offset_right = -0.384018
 offset_bottom = 0.0799866
 text = "Back"
 
-[node name="LoadStart" type="Button" parent="UI/LoadGameMenu"]
+[node name="LoadStart" type="Button" parent="LoadGameMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.465
@@ -121,8 +124,8 @@ offset_right = 0.319946
 offset_bottom = 0.159973
 text = "Load"
 
-[connection signal="button_up" from="UI/MainMenu/Start" to="." method="_on_start_button_up"]
-[connection signal="button_up" from="UI/MainMenu/Load" to="." method="_on_load_button_up"]
-[connection signal="button_up" from="UI/MainMenu/Quit" to="." method="_on_quit_button_up"]
-[connection signal="button_up" from="UI/LoadGameMenu/LoadBack" to="." method="_on_load_back_button_up"]
-[connection signal="button_up" from="UI/LoadGameMenu/LoadStart" to="." method="_on_load_start_button_up"]
+[connection signal="button_up" from="MainMenu/Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="MainMenu/Load" to="." method="_on_load_button_up"]
+[connection signal="button_up" from="MainMenu/Quit" to="." method="_on_quit_button_up"]
+[connection signal="button_up" from="LoadGameMenu/LoadBack" to="." method="_on_load_back_button_up"]
+[connection signal="button_up" from="LoadGameMenu/LoadStart" to="." method="_on_load_start_button_up"]
