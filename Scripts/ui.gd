@@ -5,8 +5,8 @@ func _on_start_button_up():
 
 
 func _on_load_button_up():
-	$UI/MainMenu.hide()
-	$UI/LoadGameMenu.show()
+	$MainMenu.hide()
+	$LoadGameMenu.show()
 
 
 func _on_quit_button_up():
@@ -14,9 +14,9 @@ func _on_quit_button_up():
 
 
 func _on_load_back_button_up():
-	$UI/LoadGameMenu.hide()
-	$UI/MainMenu.show()
+	$LoadGameMenu.hide()
+	$MainMenu.show()
 
 
 func _on_load_start_button_up():
-	Global.load_scene($UI/LoadGameMenu/LineEdit.text)
+	Global.load_scene($LoadGameMenu/LineEdit.text)

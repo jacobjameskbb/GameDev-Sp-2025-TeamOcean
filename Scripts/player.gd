@@ -22,7 +22,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	velocity.x = 0
-	print(velocity)
+	
 	if is_on_floor():
 		if velocity.y > 0:
 			velocity.y = 0
