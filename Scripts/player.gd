@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
+#movement variables
 const GRAVITY = 2
 
-const SPEED = 1
+const SPEED = 0.25
 
 @export var terminal_velocity: int = 48
 
@@ -15,6 +16,9 @@ var gravity_delay: float = seconds_per_gravity_increase / terminal_velocity
 var initial_jump_height: float
 
 var gravity_waiting = false
+
+#animation variables
+var gun_bounce = range(0,1)
 
 
 func _physics_process(delta):
