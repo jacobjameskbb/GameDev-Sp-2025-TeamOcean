@@ -30,7 +30,7 @@ zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bdit5")
-frame_progress = 0.293011
+frame_progress = 0.880792
 
 [node name="Gun" type="Node2D" parent="."]
 
