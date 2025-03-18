@@ -9,7 +9,7 @@ const SPEED = 4
 
 @export var jump_speed: int = 74
 
-@export var seconds_per_gravity_increase: float = 0.85
+@export var seconds_per_gravity_increase: float = 0.9
 
 var gravity_delay: float = seconds_per_gravity_increase / terminal_velocity
 
