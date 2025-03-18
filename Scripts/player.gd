@@ -3,13 +3,13 @@ extends CharacterBody2D
 #movement variables
 const GRAVITY = 2.5
 
-const SPEED = 0.25
+const SPEED = 4
 
-@export var terminal_velocity: int = 64
+@export var terminal_velocity: int = 54
 
-@export var jump_speed: int = 80
+@export var jump_speed: int = 74
 
-@export var seconds_per_gravity_increase: float = 1
+@export var seconds_per_gravity_increase: float = 0.85
 
 var gravity_delay: float = seconds_per_gravity_increase / terminal_velocity
 
@@ -20,10 +20,11 @@ var gravity_waiting = false
 #animation variables
 var gun_bounce = range(0,1)
 
+var flipped = 1
 
 func _physics_process(delta):
 	if Input.is_action_just_released(&"Fire"):
-		Global.make_bullet(self, (self.scale.x))
+		Global.make_bullet(self, (flipped))
 	
 	velocity.x = 0
 	
@@ -38,26 +39,21 @@ func _physics_process(delta):
 	else:
 		if velocity.y < terminal_velocity and gravity_waiting == false:
 			increase_gravity()
-	print()
-	print(self.scale)
-	if Input.is_action_pressed(&"Left"):
-		velocity.x += -1 * delta * 5000
-		
-		if self.scale.x != -1:
-			print('ding')
-			print(self.scale)
-			self.scale.x = -1
-			print(self.scale)
-			print('ding')
-	print(self.scale)
-	if Input.is_action_pressed(&"Right"):
-		velocity.x += 1 * delta * 5000
-		
-		if self.scale.x != 1:
-			self.scale.x = 1
-			print("dong")
 	
-	print(self.scale)
+	if Input.is_action_pressed(&"Left"):
+		velocity.x += -1 * delta * SPEED * 1000
+		
+		if self.flipped == 1 and Input.is_action_pressed(&"Right") == false:
+			self.scale.x = -1
+			self.flipped = -1
+	
+	if Input.is_action_pressed(&"Right"):
+		velocity.x += 1 * delta * SPEED * 1000
+		
+		if self.flipped == -1 and Input.is_action_pressed(&"Left") == false:
+			self.scale.x = -1
+			self.flipped = 1
+	
 	move_and_slide()
 
 

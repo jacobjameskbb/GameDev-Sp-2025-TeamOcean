@@ -8,6 +8,10 @@ var direction = 1
 
 const SPEED = 500
 
+func _ready():
+	if direction == -1:
+		$Sprite2D.flip_h = true
+
 
 func _physics_process(delta):
 	self.position += self.transform.x * SPEED * delta * direction
