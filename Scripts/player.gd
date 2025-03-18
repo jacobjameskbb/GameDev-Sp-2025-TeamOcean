@@ -3,13 +3,13 @@ extends CharacterBody2D
 #movement variables
 const GRAVITY = 2.5
 
-const SPEED = 5
+const SPEED = 4
 
-@export var terminal_velocity: int = 64
+@export var terminal_velocity: int = 54
 
-@export var jump_speed: int = 80
+@export var jump_speed: int = 74
 
-@export var seconds_per_gravity_increase: float = 1
+@export var seconds_per_gravity_increase: float = 0.85
 
 var gravity_delay: float = seconds_per_gravity_increase / terminal_velocity
 
