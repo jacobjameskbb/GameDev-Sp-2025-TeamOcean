@@ -5,9 +5,9 @@ const GRAVITY = 2.5
 
 const SPEED = 4
 
-@export var terminal_velocity: int = 50
+@export var terminal_velocity: int = 48
 
-@export var jump_speed: int = 80
+@export var jump_speed: int = 76
 
 @export var seconds_per_gravity_increase: float = 0.9
 
