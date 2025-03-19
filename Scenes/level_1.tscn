@@ -98,3 +98,22 @@ layer_0/tile_data = PackedInt32Array(262139, 0, 0, 262140, 0, 0, 327676, 0, 0, 3
 position = Vector2(-64, 32)
 
 [node name="crab" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(177, 39)
+
+[node name="crab2" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(456, -25)
+
+[node name="crab3" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(847, 39)
+
+[node name="crab4" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(1304, 39)
+
+[node name="crab5" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(1545, -25)
+
+[node name="crab6" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(1751, 39)
+
+[node name="crab7" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(2025, -153)
