@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckop8fdt281p7"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_6aamn"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6aamn")
+
+[node name="UnpauseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 192.0
+offset_right = 640.0
+offset_bottom = 256.0
+text = "Unpause"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 384.0
+offset_right = 640.0
+offset_bottom = 448.0
+text = "Quit to Menu"
+
+[connection signal="button_up" from="UnpauseButton" to="." method="_on_unpause_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_up"]
