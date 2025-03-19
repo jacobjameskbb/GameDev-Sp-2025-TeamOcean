@@ -1,11 +1,13 @@
 extends CharacterBody2D
 var target: Object = self
 var speed = 48
-
+var health = 1
 
 func _physics_process(delta):
 	move()
-	
+	if health < 1:
+		queue_free()
+		
 	
 func move():
 	if not target.global_position.x - self.global_position.x == 0:

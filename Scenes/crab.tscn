@@ -41,11 +41,10 @@ animations = [{
 radius = 108.005
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6km0h"]
-size = Vector2(17.1429, 17.1429)
+size = Vector2(22.8571, 22.8571)
 
-[node name="crab" type="CharacterBody2D"]
+[node name="crab" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.7, 0.7)
-collision_layer = 0
 script = ExtResource("1_o0k88")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -68,7 +67,7 @@ shape = SubResource("CircleShape2D_klb7d")
 [node name="kill" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill"]
-position = Vector2(2.38419e-07, 2.85714)
+position = Vector2(8.51495e-07, 2.85714)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6km0h")
 
