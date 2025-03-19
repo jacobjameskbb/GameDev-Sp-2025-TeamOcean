@@ -95,3 +95,4 @@ layer_0/tile_data = PackedInt32Array(262139, 0, 0, 262140, 0, 0, 327676, 0, 0, 3
 
 [node name="Player" parent="." instance=ExtResource("2_5gqjc")]
 position = Vector2(-64, 32)
+terminal_velocity = 48
