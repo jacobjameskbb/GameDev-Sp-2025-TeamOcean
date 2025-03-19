@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fr25sami5vhh"]
+[gd_scene load_steps=10 format=3 uid="uid://d1m7d7v0udhpf"]
 
 [ext_resource type="Script" path="res://Scripts/crab.gd" id="1_o0k88"]
 [ext_resource type="Texture2D" uid="uid://dqa8s73fmtmel" path="res://Sprites/crab.png" id="2_87wx2"]
@@ -41,6 +41,7 @@ animations = [{
 radius = 108.005
 
 [node name="crab" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_o0k88")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
