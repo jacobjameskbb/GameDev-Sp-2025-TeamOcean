@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://baq4ornxxwruv"]
+[gd_scene load_steps=7 format=3 uid="uid://baq4ornxxwruv"]
 
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_wm267"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_5gqjc"]
 [ext_resource type="Texture2D" uid="uid://bgu8s0tk5f7bk" path="res://Sprites/tile.png" id="2_ewf2u"]
+[ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="4_ikj0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64eqx"]
 texture = ExtResource("2_ewf2u")
@@ -95,3 +96,5 @@ layer_0/tile_data = PackedInt32Array(262139, 0, 0, 262140, 0, 0, 327676, 0, 0, 3
 
 [node name="Player" parent="." instance=ExtResource("2_5gqjc")]
 position = Vector2(-64, 32)
+
+[node name="crab" parent="." instance=ExtResource("4_ikj0h")]

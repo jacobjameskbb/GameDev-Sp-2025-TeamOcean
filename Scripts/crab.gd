@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var target: Object = self
-var speed = 24
+var speed = 48
 
 
 func _physics_process(delta):
@@ -22,3 +22,7 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
 		target = self
+
+
+func _on_kill_body_entered(body):
+	
