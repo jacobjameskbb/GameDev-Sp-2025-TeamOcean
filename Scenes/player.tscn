@@ -13,12 +13,20 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_vixsn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vixsn")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_gcgfs")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walking",
 "speed": 5.0
 }]
 
@@ -34,7 +42,7 @@ zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bdit5")
-frame_progress = 0.893333
+animation = &"walking"
 
 [node name="Gun" type="Node2D" parent="."]
 

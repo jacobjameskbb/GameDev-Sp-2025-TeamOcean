@@ -41,7 +41,7 @@ func _physics_process(delta):
 			increase_gravity()
 	
 	if Input.is_action_pressed(&"Left"):
-		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play("walking")
 		velocity.x += -1 * delta * SPEED * 1000
 		
 		if self.flipped == 1 and Input.is_action_pressed(&"Right") == false:
@@ -49,12 +49,15 @@ func _physics_process(delta):
 			self.flipped = -1
 	
 	if Input.is_action_pressed(&"Right"):
-		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play("walking")
 		velocity.x += 1 * delta * SPEED * 1000
 		
 		if self.flipped == -1 and Input.is_action_pressed(&"Left") == false:
 			self.scale.x = -1
 			self.flipped = 1
+	
+	if Input.is_action_pressed(&"Right") == false and Input.is_action_pressed(&"Left") == false:
+		$AnimatedSprite2D.play("default")
 	
 	move_and_slide()
 
