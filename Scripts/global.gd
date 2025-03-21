@@ -2,11 +2,22 @@ extends Node
 #for example
 #"ABCDEFGH" : 'res://Scenes/main.tscn',
 @onready var scene_keys: Dictionary = {
-	&"73824691" : &"res://Scenes/level_1.tscn"
+	&"00000000" : &"res://Scenes/ui.tscn",
+	&"73824691" : &"res://Scenes/level_1.tscn",
 }
 
 #scenes path
 var current_scene: StringName
+
+func _physics_process(_delta):
+	if Input.is_action_just_released(&"OpenMenu"):
+		get_tree().paused = true
+
+
+func place_pause_menu():
+	var new_pause_menu = load("res://Scenes/pause_menu.tscn")
+	
+	return new_pause_menu
 
 
 func load_scene(key):
