@@ -1,9 +1,13 @@
 extends Node
 #for example
 #"ABCDEFGH" : 'res://Scenes/main.tscn',
-@onready var scene_keys: Dictionary = {
+var scene_keys: Dictionary = {
 	&"00000000" : &"res://Scenes/ui.tscn",
 	&"73824691" : &"res://Scenes/level_1.tscn",
+}
+
+var item_keys: Dictionary = {
+	
 }
 
 #scenes path
@@ -12,12 +16,15 @@ var current_scene: StringName
 func _physics_process(_delta):
 	if Input.is_action_just_released(&"OpenMenu"):
 		get_tree().paused = true
+		place_pause_menu()
 
 
 func place_pause_menu():
-	var new_pause_menu = load("res://Scenes/pause_menu.tscn")
+	var new_pause_menu = load("res://Scenes/pause_menu.tscn").instantiate()
 	
-	return new_pause_menu
+	new_pause_menu.position = get_tree().get_first_node_in_group(&"Player").position - Vector2(288, 160)
+	
+	get_tree().current_scene.add_child(new_pause_menu)
 
 
 func load_scene(key):
@@ -27,6 +34,10 @@ func load_scene(key):
 	current_scene = scene_keys[key]
 	
 	get_tree().change_scene_to_file(current_scene)
+
+
+func give_item(item_key):
+	item_key = 1
 
 
 func make_bullet(bullet_owner: Object, bullet_direction):

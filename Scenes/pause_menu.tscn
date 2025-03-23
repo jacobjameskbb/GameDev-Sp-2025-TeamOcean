@@ -5,28 +5,64 @@
 [node name="PauseMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_6aamn")
 
-[node name="UnpauseButton" type="Button" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 192.0
-offset_right = 640.0
-offset_bottom = 256.0
+offset_left = 464.0
+offset_top = 144.0
+offset_right = 688.0
+offset_bottom = 496.0
+color = Color(0.392157, 0.392157, 0.392157, 0.588235)
+
+[node name="UnpauseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.296
+anchor_right = 0.556
+anchor_bottom = 0.395
+offset_left = 0.511963
+offset_top = 0.192001
+offset_right = -0.512085
+offset_bottom = 0.0399933
 text = "Unpause"
 
 [node name="QuitButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 512.0
-offset_top = 384.0
-offset_right = 640.0
-offset_bottom = 448.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.593
+anchor_right = 0.556
+anchor_bottom = 0.691
+offset_left = 0.511963
+offset_top = -0.264038
+offset_right = -0.512085
+offset_bottom = 0.231964
 text = "Quit to Menu"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.469
+anchor_right = 0.556
+anchor_bottom = 0.519
+offset_left = 0.511963
+offset_top = 0.0879822
+offset_right = -0.512085
+offset_bottom = -0.312042
+tooltip_text = "Press enter to get item"
+placeholder_text = "Item Code"
+drag_and_drop_selection_enabled = false
 
 [connection signal="button_up" from="UnpauseButton" to="." method="_on_unpause_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_up"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
