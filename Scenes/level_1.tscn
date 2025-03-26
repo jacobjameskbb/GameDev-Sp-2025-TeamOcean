@@ -41,9 +41,6 @@ position = Vector2(1545, -25)
 [node name="crab6" parent="." instance=ExtResource("4_ikj0h")]
 position = Vector2(1751, 39)
 
-[node name="crab7" parent="." instance=ExtResource("4_ikj0h")]
-position = Vector2(2025, -153)
-
 [node name="crab8" parent="." instance=ExtResource("4_ikj0h")]
 position = Vector2(3215, -21)
 
@@ -52,3 +49,7 @@ position = Vector2(3952, 25)
 
 [node name="crab10" parent="." instance=ExtResource("4_ikj0h")]
 position = Vector2(2638, 38)
+
+[node name="crab7" parent="." instance=ExtResource("4_ikj0h")]
+position = Vector2(2025, -153)
+scale = Vector2(0.7, 0.7)
