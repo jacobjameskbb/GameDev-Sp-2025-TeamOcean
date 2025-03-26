@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var health = 3
 #movement variables
 const GRAVITY = 2.5
 
@@ -70,3 +70,7 @@ func increase_gravity():
 	gravity_waiting = false
 	
 	velocity.y += 1 * GRAVITY
+func damage():
+	health -= 1
+	if health < 1:
+		get_tree().quit()

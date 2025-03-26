@@ -23,14 +23,16 @@ func move():
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group(&"Player"):
 		target = body
 
 
 func _on_area_2d_body_exited(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group(&"Player"):
 		target = self
 
 
-func _on_kill_body_entered(_body):
-	pass
+func _on_kill_body_entered(body):
+	if body.is_in_group(&"Player"):
+		body.damage()
+		print(body.health)

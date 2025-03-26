@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://yue2y1xx0rbe"]
 
-[ext_resource type="Texture2D" uid="uid://bgu8s0tk5f7bk" path="res://Sprites/tile.png" id="1_17p1q"]
-[ext_resource type="Texture2D" uid="uid://xkyqf0rvfvop" path="res://Sprites/special_tiles.png" id="2_rylrx"]
+[ext_resource type="Texture2D" uid="uid://bgu8s0tk5f7bk" path="res://Sprites/tile.png" id="1_qj2vo"]
+[ext_resource type="Texture2D" uid="uid://xkyqf0rvfvop" path="res://Sprites/special_tiles.png" id="2_fando"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64eqx"]
-texture = ExtResource("1_17p1q")
+texture = ExtResource("1_qj2vo")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -74,7 +74,7 @@ texture = ExtResource("1_17p1q")
 17:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbjcc"]
-texture = ExtResource("2_rylrx")
+texture = ExtResource("2_fando")
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
@@ -93,7 +93,7 @@ texture = ExtResource("2_rylrx")
 6:0/0 = 0
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, 8, -4, 0, -4)
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -4, 0, 8, 8, 8, 8, -4, 0, -4)
 7:0/0 = 0
 7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:0/0/physics_layer_0/angular_velocity = 0.0
@@ -105,7 +105,7 @@ texture = ExtResource("2_rylrx")
 9:0/0 = 0
 9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:0/0/physics_layer_0/angular_velocity = 0.0
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, -8, 8, 8, 8, 8, -4)
 10:0/0 = 0
 10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:0/0/physics_layer_0/angular_velocity = 0.0
@@ -156,10 +156,11 @@ texture = ExtResource("2_rylrx")
 6:1/0 = 0
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, 0, 8, -8)
 7:1/0 = 0
 7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:1/0/physics_layer_0/angular_velocity = 0.0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, 8, -8)
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -4, -8, 0, 8, 8, 8, -8)
 8:1/0 = 0
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:1/0/physics_layer_0/angular_velocity = 0.0
