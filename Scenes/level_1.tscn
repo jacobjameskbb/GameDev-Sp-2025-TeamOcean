@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_wm267"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_5gqjc"]
-[ext_resource type="TileSet" uid="uid://cpresthabx0gq" path="res://Tilesets/tiles.tres" id="2_gr8h7"]
+[ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="2_gr8h7"]
 [ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="4_ikj0h"]
 
 [node name="Level 1" type="Node"]
