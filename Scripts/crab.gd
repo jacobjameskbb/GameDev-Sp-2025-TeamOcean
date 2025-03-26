@@ -1,25 +1,53 @@
 extends CharacterBody2D
 
-var target: Object = self
+# Crab Statistics
 var speed = 48
+
 var health = 1
+
+# Crab Combat
+var damage: float = 1
+
+var target: Object = self
+
+var target_in_area: bool = false
+
+var can_attack: bool = true
+
+var attack_cooldown: float = 1.0
+
 
 func _physics_process(_delta):
 	move()
 	
 	if health < 1:
 		queue_free()
-		
+	
+	if target_in_area and can_attack:
+		attack()
 
 
 func move():
-	if not target.global_position.x - self.global_position.x == 0:
+	if self.global_position.x - target.global_position.x >= 13.5 or self.global_position.x - target.global_position.x <= -13.5:
 		velocity.x = 24 * (target.global_position.x - self.global_position.x) / abs(target.global_position.x - self.global_position.x)
 	else:
 		velocity.x = 0
 	
-	velocity.y += 2
+	if is_on_floor() == false:
+		velocity.y += 2
+	
 	move_and_slide()
+
+
+func attack():
+	can_attack = false
+	
+	await get_tree().create_timer(attack_cooldown).timeout
+	
+	can_attack = true
+	
+	if target.has_method(&"damage"):
+		target.damage()
 
 
 func _on_area_2d_body_entered(body):
@@ -28,11 +56,15 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_body_exited(body):
-	if body.is_in_group(&"Player"):
+	if body == target:
 		target = self
 
 
 func _on_kill_body_entered(body):
 	if body.is_in_group(&"Player"):
-		body.damage()
-		print(body.health)
+		target_in_area = true
+
+
+func _on_kill_body_exited(body):
+	if body == target:
+		target_in_area = false

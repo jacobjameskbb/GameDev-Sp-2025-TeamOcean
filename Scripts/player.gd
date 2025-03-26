@@ -70,7 +70,9 @@ func increase_gravity():
 	gravity_waiting = false
 	
 	velocity.y += 1 * GRAVITY
-func damage():
-	health -= 1
+
+
+func damage(damage_amount := 1):
+	health -= 1 * damage_amount
 	if health < 1:
-		get_tree().quit()
+		Global.load_scene(&"00000000")
