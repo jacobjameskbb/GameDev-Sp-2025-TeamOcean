@@ -36,8 +36,8 @@ func load_scene(key):
 	get_tree().change_scene_to_file(current_scene)
 
 
-func give_item(item_key):
-	item_key = 1
+func give_item(_item_key):
+	pass
 
 
 func make_bullet(bullet_owner: Object, bullet_direction):
