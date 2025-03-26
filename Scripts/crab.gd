@@ -46,7 +46,7 @@ func attack():
 	
 	can_attack = true
 	
-	if target.has_method(&"damage"):
+	if target.has_method(&"damage") and target_in_area == true:
 		target.damage()
 
 
