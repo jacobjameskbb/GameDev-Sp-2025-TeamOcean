@@ -21,6 +21,8 @@ func _physics_process(_delta):
 	move()
 	
 	if health < 1:
+		Global.enemy_death(&"Crab", self.position)
+		
 		queue_free()
 	
 	if target_in_area and can_attack:

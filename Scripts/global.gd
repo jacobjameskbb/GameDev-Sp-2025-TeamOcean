@@ -11,8 +11,17 @@ var item_keys: Dictionary = {
 	
 }
 
-#scenes path
+#scene path
 var current_scene: StringName
+
+var loot_table = {
+	&"Crab" : {
+		&"Loot" : [&"Pearl"],
+	},
+}
+
+var pearls: int = 0
+
 
 func _physics_process(_delta):
 	if Input.is_action_just_released(&"OpenMenu"):
@@ -21,7 +30,7 @@ func _physics_process(_delta):
 
 
 func place_pause_menu():
-	var new_pause_menu = load("res://Scenes/pause_menu.tscn").instantiate()
+	var new_pause_menu = load(&"res://Scenes/pause_menu.tscn").instantiate()
 	
 	new_pause_menu.position = get_tree().get_first_node_in_group(&"Player").position - Vector2(288, 160)
 	
@@ -39,6 +48,28 @@ func load_scene(key):
 
 func give_item(_item_key):
 	pass
+
+
+func enemy_death(type: StringName, position: Vector2):
+	var loot: Array = loot_table[type][&"Loot"]
+	
+	var loot_picked: StringName
+	
+	if loot.size() > 1:
+		loot_picked = loot.pick_random()
+	else:
+		loot_picked = loot[0]
+	
+	if loot_picked == &"Pearl":
+		place_pearl(position)
+
+
+func place_pearl(position: Vector2):
+	var new_pearl = load("res://Scenes/pearl.tscn").instantiate()
+	
+	new_pearl.position = position
+	
+	get_tree().current_scene.add_child(new_pearl)
 
 
 func make_bullet(bullet_owner: Object, bullet_direction):
