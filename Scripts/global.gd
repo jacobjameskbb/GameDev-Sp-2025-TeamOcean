@@ -5,6 +5,7 @@ var scene_keys: Dictionary = {
 	&"00000000" : &"res://Scenes/ui.tscn",
 	&"73824691" : &"res://Scenes/level_1.tscn",
 	&"19285564" : &"res://Scenes/level_2.tscn",
+	&"19191919" : &"res://Scenes/level_3.tscn",
 }
 
 var item_keys: Dictionary = {

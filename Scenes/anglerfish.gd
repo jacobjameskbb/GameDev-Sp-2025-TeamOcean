@@ -7,7 +7,7 @@ var health = 3
 
 var damage: float = 1
 
-var target: Object = self
+var target: Object = self`
 
 var target_in_area: bool = false
 
