@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var speed = 64
 
-var health = 1
+var health = 3
 
 var damage: float = 1
 
