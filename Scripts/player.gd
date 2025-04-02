@@ -1,5 +1,12 @@
 extends CharacterBody2D
+
 var health = 3
+
+var abilities = {
+	&"Stun" : false,
+	&"Explosive" : false,
+}
+
 #movement variables
 const GRAVITY = 2.5
 
@@ -41,7 +48,7 @@ func _physics_process(delta):
 			increase_gravity()
 	
 	if Input.is_action_pressed(&"Left"):
-		$AnimatedSprite2D.play("walking")
+		$AnimatedSprite2D.play(&"walking")
 		velocity.x += -1 * delta * SPEED * 1000
 		
 		if self.flipped == 1 and Input.is_action_pressed(&"Right") == false:
@@ -49,7 +56,7 @@ func _physics_process(delta):
 			self.flipped = -1
 	
 	if Input.is_action_pressed(&"Right"):
-		$AnimatedSprite2D.play("walking")
+		$AnimatedSprite2D.play(&"walking")
 		velocity.x += 1 * delta * SPEED * 1000
 		
 		if self.flipped == -1 and Input.is_action_pressed(&"Left") == false:
@@ -57,7 +64,7 @@ func _physics_process(delta):
 			self.flipped = 1
 	
 	if Input.is_action_pressed(&"Right") == false and Input.is_action_pressed(&"Left") == false:
-		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play(&"default")
 	
 	move_and_slide()
 
@@ -72,7 +79,7 @@ func increase_gravity():
 	velocity.y += 1 * GRAVITY
 
 
-func damage(damage_amount := 1):
+func damaged(damage_amount := 1):
 	health -= 1 * damage_amount
 	if health < 1:
 		Global.load_scene(&"00000000")

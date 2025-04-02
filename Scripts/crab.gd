@@ -20,13 +20,12 @@ var attack_cooldown: float = 0.5
 func _physics_process(_delta):
 	move()
 	
-	if health < 1:
-		Global.enemy_death(&"Crab", self.position)
-		
-		queue_free()
-	
 	if target_in_area and can_attack:
 		attack()
+
+
+func damaged(damage_amount):
+	health += -1 * damage_amount
 
 
 func move():
@@ -48,8 +47,8 @@ func attack():
 	
 	can_attack = true
 	
-	if target.has_method(&"damage") and target_in_area == true:
-		target.damage()
+	if target.has_method(&"damaged") and target_in_area == true:
+		target.damaged()
 
 
 func _on_area_2d_body_entered(body):

@@ -72,6 +72,14 @@ func place_pearl(position: Vector2):
 	get_tree().current_scene.add_child(new_pearl)
 
 
+func make_explosion(position: Vector2):
+	var new_explosion = load("res://Scenes/explosion.tscn").instantiate()
+	
+	new_explosion.position = position
+	
+	get_tree().current_scene.add_child(new_explosion)
+
+
 func make_bullet(bullet_owner: Object, bullet_direction):
 	var bullet_scene = load("res://Scenes/bullet.tscn").instantiate()
 	
