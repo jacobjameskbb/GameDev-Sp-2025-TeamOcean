@@ -38,10 +38,10 @@ position = Vector2(683, 249)
 position = Vector2(1761, 115)
 
 [node name="anglerfish" parent="." instance=ExtResource("4_t4374")]
-position = Vector2(379, 191)
+position = Vector2(238, 91)
 
 [node name="anglerfish2" parent="." instance=ExtResource("4_t4374")]
-position = Vector2(570, 213)
+position = Vector2(320, 56)
 
 [node name="anglerfish3" parent="." instance=ExtResource("4_t4374")]
-position = Vector2(889, 146)
+position = Vector2(1452, 90)
