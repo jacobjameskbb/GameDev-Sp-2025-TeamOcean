@@ -13,7 +13,7 @@ var target_in_area: bool = false
 
 var can_attack: bool = true
 
-var attack_cooldown: float = 0.5
+var attack_cooldown: float = 5.0
 
 
 func _physics_process(_delta):
