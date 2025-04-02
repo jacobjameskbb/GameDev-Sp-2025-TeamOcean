@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv1b5jxstk0fr"]
+
+[ext_resource type="Script" path="res://Scenes/anglerfish.gd" id="1_oer23"]
+[ext_resource type="Texture2D" uid="uid://5hi0au6snbtk" path="res://Sprites/Angler Fish.png" id="2_86n71"]
+[ext_resource type="Texture2D" uid="uid://cuvtbaqgkx0al" path="res://Sprites/Angler Fish 2.png" id="3_0t661"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxuxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_86n71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0t661")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhyka"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5d60"]
+radius = 304.593
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_saobw"]
+size = Vector2(25.7143, 25.7143)
+
+[node name="anglerfish" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
+script = ExtResource("1_oer23")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_uxuxp")
+animation = &"walk"
+frame = 1
+frame_progress = 0.538255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_qhyka")
+
+[node name="detect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect"]
+shape = SubResource("CircleShape2D_h5d60")
+
+[node name="kill" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill"]
+position = Vector2(-2.04359e-06, 2.85714)
+shape = SubResource("RectangleShape2D_saobw")
+
+[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
+[connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]
+[connection signal="body_entered" from="kill" to="." method="_on_kill_body_entered"]
+[connection signal="body_exited" from="kill" to="." method="_on_kill_body_exited"]
