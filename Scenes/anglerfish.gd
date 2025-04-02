@@ -3,9 +3,9 @@ extends CharacterBody2D
 
 var speed = 64
 
-var health = 3
+var health = 1
 
-var damage: float = 1
+var damage: float = 0.25
 
 var target: Object = self
 
