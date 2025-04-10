@@ -9,7 +9,8 @@ var scene_keys: Dictionary = {
 }
 
 var item_keys: Dictionary = {
-	
+	&"72364581" : &"Stun",
+	&"36810972" : &"Explosive",
 }
 
 #scene path
@@ -19,13 +20,16 @@ var loot_table = {
 	&"Crab" : {
 		&"Loot" : [&"Pearl"],
 	},
+	&"Anglerfish" : {
+		&"Loot" : [&"Pearl"],
+	},
 }
 
 var pearls: int = 0
 
 
 func _physics_process(_delta):
-	if Input.is_action_just_released(&"OpenMenu"):
+	if Input.is_action_just_released(&"OpenMenu") and get_tree().get_first_node_in_group(&"Player") != null:
 		get_tree().paused = true
 		place_pause_menu()
 
@@ -47,8 +51,8 @@ func load_scene(key):
 	get_tree().change_scene_to_file(current_scene)
 
 
-func give_item(_item_key):
-	pass
+func give_item(item_key):
+	get_tree().get_first_node_in_group(&"Player").abilities[item_key] = true
 
 
 func enemy_death(type: StringName, position: Vector2):
@@ -70,7 +74,7 @@ func place_pearl(position: Vector2):
 	
 	new_pearl.position = position
 	
-	get_tree().current_scene.add_child(new_pearl)
+	get_tree().current_scene.call_deferred(&"add_child", new_pearl)
 
 
 func make_explosion(position: Vector2):

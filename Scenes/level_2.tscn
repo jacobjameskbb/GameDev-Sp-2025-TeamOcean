@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccm7e60d8p4o7"]
+[gd_scene load_steps=6 format=3 uid="uid://ccm7e60d8p4o7"]
 
+[ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_8bb6q"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="1_28y0n"]
 [ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="1_si7w6"]
 [ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="3_vmkf4"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_waol8"]
+radius = 54.1479
+
 [node name="Level_2" type="Node"]
+script = ExtResource("1_8bb6q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1193.0
@@ -55,3 +60,13 @@ position = Vector2(1232, -360)
 
 [node name="crab12" parent="." instance=ExtResource("3_vmkf4")]
 position = Vector2(1210, -360)
+
+[node name="end" type="Area2D" parent="."]
+position = Vector2(2056, -400)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_waol8")
+
+[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]

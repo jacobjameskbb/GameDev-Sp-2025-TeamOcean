@@ -24,8 +24,17 @@ func _physics_process(_delta):
 		attack()
 
 
+func death():
+	Global.enemy_death(&"Crab", self.position)
+	
+	call_deferred(&"queue_free")
+
+
 func damaged(damage_amount):
 	health += -1 * damage_amount
+	
+	if health <= 0:
+		death()
 
 
 func move():

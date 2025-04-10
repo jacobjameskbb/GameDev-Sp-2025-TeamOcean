@@ -29,6 +29,11 @@ var gun_bounce = range(0,1)
 
 var flipped = 1
 
+
+func _ready():
+	$Pearls.text = str("Pearls: ", Global.pearls)
+
+
 func _physics_process(delta):
 	if Input.is_action_just_released(&"Fire"):
 		Global.make_bullet(self, (flipped))
@@ -54,6 +59,8 @@ func _physics_process(delta):
 		if self.flipped == 1 and Input.is_action_pressed(&"Right") == false:
 			self.scale.x = -1
 			self.flipped = -1
+			$Pearls.scale.x = -0.25
+			$Pearls.position = Vector2(288, -160)
 	
 	if Input.is_action_pressed(&"Right"):
 		$AnimatedSprite2D.play(&"walking")
@@ -62,6 +69,8 @@ func _physics_process(delta):
 		if self.flipped == -1 and Input.is_action_pressed(&"Left") == false:
 			self.scale.x = -1
 			self.flipped = 1
+			$Pearls.scale.x = 0.25
+			$Pearls.position = Vector2(-288, -160)
 	
 	if Input.is_action_pressed(&"Right") == false and Input.is_action_pressed(&"Left") == false:
 		$AnimatedSprite2D.play(&"default")
@@ -83,3 +92,9 @@ func damaged(damage_amount := 1):
 	health -= 1 * damage_amount
 	if health < 1:
 		Global.load_scene(&"00000000")
+
+
+func increase_pearls():
+	Global.pearls += 1
+	
+	$Pearls.text = str("Pearls: ", Global.pearls)

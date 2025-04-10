@@ -18,12 +18,24 @@ var attack_cooldown: float = 0.5
 
 func _physics_process(_delta):
 	move()
+	
 	$AnimatedSprite2D.play("walk")
-	if health < 1:
-		queue_free()
 	
 	if target_in_area and can_attack:
 		attack()
+
+
+func death():
+	Global.enemy_death(&"Anglerfish", self.position)
+	
+	call_deferred(&"queue_free")
+
+
+func damaged(damage_amount):
+	health += -1 * damage_amount
+	
+	if health <= 0:
+		death()
 
 
 func move():

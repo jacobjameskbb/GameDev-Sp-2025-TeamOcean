@@ -20,7 +20,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body != shooter:
 		if body.is_in_group(&"Enemy"):
-			body.damage(damage)
+			body.damaged(damage)
 		
 		if shooter.abilities[&"Explosive"] == true:
 			Global.call_deferred(&"make_explosion", self.position)

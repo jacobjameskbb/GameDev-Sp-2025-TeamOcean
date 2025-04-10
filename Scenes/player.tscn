@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://djdbeoiwffj44"]
+[gd_scene load_steps=8 format=3 uid="uid://djdbeoiwffj44"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_sk7cf"]
 [ext_resource type="Texture2D" uid="uid://cv57dry6y57i1" path="res://Sprites/player.png" id="2_vixsn"]
@@ -30,6 +30,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_txxox"]
+font_size = 64
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 6
 script = ExtResource("1_sk7cf")
@@ -50,3 +53,12 @@ animation = &"walking"
 [node name="Sprite2D" type="Sprite2D" parent="Gun"]
 texture = ExtResource("3_7ne5g")
 offset = Vector2(6, 0)
+
+[node name="Pearls" type="Label" parent="."]
+offset_left = -288.0
+offset_top = -160.0
+offset_right = -26.0
+offset_bottom = -72.0
+scale = Vector2(0.25, 0.25)
+text = "Pearls: 0"
+label_settings = SubResource("LabelSettings_txxox")
