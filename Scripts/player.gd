@@ -7,6 +7,12 @@ var abilities = {
 	&"Explosive" : false,
 }
 
+var gun_cooldown: float = 1.0
+
+var preparing_gun = false
+
+var gun_position: Vector2
+
 #movement variables
 const GRAVITY = 2.5
 
@@ -25,9 +31,13 @@ var initial_jump_height: float
 var gravity_waiting = false
 
 #animation variables
-var gun_bounce = range(0,1)
+const bounce_limit = 0.5
 
 var flipped = 1
+
+var hit_lower_range = false
+
+var bounce_delay = 0.5
 
 
 func _ready():
@@ -35,8 +45,21 @@ func _ready():
 
 
 func _physics_process(delta):
-	if Input.is_action_just_released(&"Fire"):
-		Global.make_bullet(self, (flipped))
+	if hit_lower_range == false:
+		$Gun.position.y += 0.01
+	else:
+		$Gun.position.y += -0.01
+	
+	print($Gun.position.y)
+	
+	if $Gun.position.y >= bounce_limit or $Gun.position.y <= -bounce_limit:
+		hit_lower_range = not hit_lower_range
+	
+	gun_position = $Gun.position
+	
+	if Input.is_action_just_released(&"Fire") and preparing_gun == false:
+		
+		fire_bullet()
 	
 	velocity.x = 0
 	
@@ -76,6 +99,16 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play(&"default")
 	
 	move_and_slide()
+
+
+func fire_bullet():
+	preparing_gun = true
+	
+	await get_tree().create_timer(gun_cooldown).timeout
+	
+	preparing_gun = false
+	
+	Global.make_bullet(self, (flipped))
 
 
 func increase_gravity():

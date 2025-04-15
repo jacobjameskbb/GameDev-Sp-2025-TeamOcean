@@ -48,7 +48,7 @@ func move():
 	else:
 		velocity.x = 0
 	if self.global_position.y - target.global_position.y >= 13.5 or self.global_position.y - target.global_position.y <= -13.5:
-		velocity.y = speed / 3 * (target.global_position.y - self.global_position.y) / abs(target.global_position.y - self.global_position.y)
+		velocity.y = speed / 3.0 * (target.global_position.y - self.global_position.y) / abs(target.global_position.y - self.global_position.y)
 	else:
 		velocity.y = 0
 	

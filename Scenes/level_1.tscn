@@ -16,7 +16,7 @@ offset_left = -792.0
 offset_top = -1022.0
 offset_right = 4934.0
 offset_bottom = 208.0
-color = Color(0, 0.298039, 0.87451, 1)
+color = Color(0.165552, 0.393528, 0.563779, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_gr8h7")
