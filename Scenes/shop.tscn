@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://1errsfhdk6at"]
+
+[ext_resource type="Texture2D" uid="uid://cfbg4japqg03y" path="res://Sprites/icon.svg" id="1_1stvv"]
+[ext_resource type="Script" path="res://Scripts/shop.gd" id="1_xg128"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_828ua"]
+size = Vector2(128, 128)
+
+[node name="Shop" type="Node"]
+script = ExtResource("1_xg128")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_828ua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1stvv")
+
+[node name="ShopInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 80.0
+offset_top = -64.0
+offset_right = 208.0
+offset_bottom = 64.0
+
+[node name="ColorRect" type="ColorRect" parent="ShopInterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.000488281
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.392157, 0, 0.705882)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ShopInterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopInterface/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]

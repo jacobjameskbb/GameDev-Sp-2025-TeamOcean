@@ -13,6 +13,15 @@ var item_keys: Dictionary = {
 	&"36810972" : &"Explosive",
 }
 
+#item cost in pearls
+var item_cost: Dictionary = {
+	&"Stun" : 12,
+	&"Explosive" : 20,
+	
+	
+}
+
+
 #scene path
 var current_scene: StringName
 
@@ -49,6 +58,13 @@ func load_scene(key):
 	current_scene = scene_keys[key]
 	
 	get_tree().change_scene_to_file(current_scene)
+
+
+func buy_item(item_key):
+	if pearls >= item_cost[item_key]:
+		pearls += -item_cost[item_key]
+		
+		give_item(item_key)
 
 
 func give_item(item_key):

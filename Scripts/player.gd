@@ -102,13 +102,13 @@ func _physics_process(delta):
 
 
 func fire_bullet():
+	Global.make_bullet(self, (flipped))
+	
 	preparing_gun = true
 	
 	await get_tree().create_timer(gun_cooldown).timeout
 	
 	preparing_gun = false
-	
-	Global.make_bullet(self, (flipped))
 
 
 func increase_gravity():
