@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var locked = null
 var health = 3
 
 var abilities = {
@@ -42,6 +42,14 @@ var bounce_delay = 0.5
 
 func _ready():
 	$Pearls.text = str("Pearls: ", Global.pearls)
+
+
+func _process(_delta):
+	if locked != null:
+		if global_position.x < locked:
+			global_position.x = locked
+		elif global_position.x > locked + get_viewport().size.x:
+			global_position.x = locked + get_viewport().size.x
 
 
 func _physics_process(delta):

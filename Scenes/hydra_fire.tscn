@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl1v83xadofe6"]
+
+[ext_resource type="Script" path="res://Scripts/hydra_fire.gd" id="1_qwsdx"]
+[ext_resource type="Texture2D" uid="uid://dkecm6c0wxje" path="res://Sprites/sphere_fire.png" id="2_q62nj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s08fy"]
+radius = 8.0
+
+[sub_resource type="Curve" id="Curve_r1buh"]
+max_value = 0.2
+_data = [Vector2(0, 0.025), 0.0, 0.200549, 0, 1, Vector2(0.5, 0.125275), 0.0, 0.0, 0, 0, Vector2(1, 0.025), -0.200549, 0.0, 1, 0]
+point_count = 3
+
+[node name="hydra_fire" type="Node2D"]
+script = ExtResource("1_qwsdx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_s08fy")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 500
+texture = ExtResource("2_q62nj")
+emission_shape = 1
+emission_sphere_radius = 6.2
+gravity = Vector2(0, -20)
+scale_amount_min = 0.01
+scale_amount_max = 0.2
+color = Color(1, 0.278431, 0, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_r1buh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_q62nj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
