@@ -58,8 +58,6 @@ func _physics_process(delta):
 	else:
 		$Gun.position.y += -0.01
 	
-	print($Gun.position.y)
-	
 	if $Gun.position.y >= bounce_limit or $Gun.position.y <= -bounce_limit:
 		hit_lower_range = not hit_lower_range
 	
