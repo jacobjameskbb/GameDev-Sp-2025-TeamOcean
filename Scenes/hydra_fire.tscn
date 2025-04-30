@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkecm6c0wxje" path="res://Sprites/sphere_fire.png" id="2_q62nj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s08fy"]
-radius = 8.0
+radius = 6.0
 
 [sub_resource type="Curve" id="Curve_r1buh"]
 max_value = 0.2
@@ -12,6 +12,8 @@ _data = [Vector2(0, 0.025), 0.0, 0.200549, 0, 1, Vector2(0.5, 0.125275), 0.0, 0.
 point_count = 3
 
 [node name="hydra_fire" type="Node2D"]
+z_index = -1
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_qwsdx")
 
 [node name="Area2D" type="Area2D" parent="."]

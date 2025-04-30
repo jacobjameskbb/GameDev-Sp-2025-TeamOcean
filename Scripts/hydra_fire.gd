@@ -6,7 +6,7 @@ var shooter: Object
 
 var direction = 1
 
-const SPEED = 500
+const SPEED = 300
 
 func _ready():
 	pass

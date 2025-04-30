@@ -24,8 +24,8 @@ radius = 7.07107
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5d60"]
 radius = 304.593
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_saobw"]
-size = Vector2(25.7143, 25.7143)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdhny"]
+radius = 6.0208
 
 [node name="anglerfish" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
@@ -54,8 +54,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill"]
-position = Vector2(-2.04359e-06, 2.85714)
-shape = SubResource("RectangleShape2D_saobw")
+position = Vector2(-2.04359e-06, -3.50001)
+shape = SubResource("CircleShape2D_vdhny")
 
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]
