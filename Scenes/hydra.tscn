@@ -104,6 +104,8 @@ position = Vector2(7, 0)
 shape = SubResource("CircleShape2D_mxd5u")
 
 [node name="playerDetecter" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("12_a5dvp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetecter"]
@@ -129,5 +131,6 @@ offset_right = -37.0
 offset_bottom = -6.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="playerDetecter" to="playerDetecter" method="_on_body_entered"]
 [connection signal="body_entered" from="impale" to="." method="_on_impale_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
