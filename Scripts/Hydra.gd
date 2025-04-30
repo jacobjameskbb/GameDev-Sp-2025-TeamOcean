@@ -9,7 +9,7 @@ var failAttack = 0
 var Attack = 0
 var reached = 0
 var fire = load("res://Scenes/hydra_fire.tscn")
-var health = 35
+var health = 100
 
 
 func _ready():

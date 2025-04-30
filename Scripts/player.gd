@@ -7,7 +7,7 @@ var abilities = {
 	&"Explosive" : false,
 }
 
-var gun_cooldown: float = 1.0
+var gun_cooldown: float = 0.0
 
 var preparing_gun = false
 
