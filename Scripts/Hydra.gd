@@ -10,7 +10,7 @@ var Attack = 0
 var reached = 0
 var fire = load("res://Scenes/hydra_fire.tscn")
 var health = 100
-
+var target: Object
 
 func _ready():
 	$impale.monitoring = false
@@ -78,15 +78,15 @@ func _on_animated_sprite_2d_animation_finished():
 			firei.global_position = Vector2(self.global_position.x- 25, self.global_position.y - 24)
 		if state == 3:
 			firei.global_position = Vector2(self.global_position.x- 24, self.global_position.y -14)
-		if get_parent().is_in_group(&"Enemy") == false and get_parent().has_signal("level") == true:
-			firei.direction = -(firei.global_position - get_parent().player.global_position + -0.25 * get_parent().player.velocity * firei.global_position.distance_to(get_parent().player.global_position) / 300).normalized()
+		if target != null:
+			firei.direction = -(firei.global_position - target.global_position + -0.25 * target.velocity * firei.global_position.distance_to(target.global_position) / 300).normalized()
 		else:
 			firei.direction = Vector2(-1, 0)
 		get_parent().add_child(firei)
 
 
 func damaged(dmg):
-	if not global_position.distance_to(get_parent().player.global_position) >= 250:
+	if not global_position.distance_to(target.global_position) >= 250:
 		health -= dmg
 		print("ding")
 		if health <= 0:
@@ -96,3 +96,8 @@ func damaged(dmg):
 func _on_impale_body_entered(body):
 	if body.is_in_group(&"Player"):
 		body.damaged(5)
+
+
+func _on_detection_body_entered(body):
+	if body.is_in_group(&"Player"):
+		target = body
