@@ -6,12 +6,11 @@ extends Node
 
 # The contents of the lists in the dictionary should be StringNames
 const loot_dictionary = {
-	1 : [&"Stun", &"Explosive"],
-	2 : [],
+	1 : [&"Stun", &"Slow"],
+	2 : [&"Explosive", &"Auto"],
 	3 : [],
 	4 : [],
 }
-
 
 
 func _ready():
@@ -35,13 +34,13 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_body_exited(body):
-	pass # Replace with function body.
+	if body.is_in_group(&"Player"):
+		close_shop()
 
 
 func open_shop():
-	pass
-	
-	
-	
-	
-	
+	$ShopInterface.visible = true
+
+
+func close_shop():
+	$ShopInterface.visible = false

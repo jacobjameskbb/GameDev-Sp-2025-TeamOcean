@@ -15,8 +15,10 @@ var item_keys: Dictionary = {
 
 #item cost in pearls
 var item_cost: Dictionary = {
-	&"Stun" : 12,
+	&"Stun" : 10,
 	&"Explosive" : 20,
+	&"Auto" : 15,
+	&"Slow" : 8,
 }
 
 
