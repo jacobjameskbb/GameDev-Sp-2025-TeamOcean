@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dyjpg608d6cq4"]
+[gd_scene load_steps=19 format=3 uid="uid://dyjpg608d6cq4"]
 
 [ext_resource type="Script" path="res://Scripts/hydra.gd" id="1_oyrvh"]
 [ext_resource type="Texture2D" uid="uid://dasr140x82n3b" path="res://Sprites/Hydra_0008.png" id="2_x1x4i"]
@@ -91,6 +91,9 @@ size = Vector2(2, 2)
 radius = 1.0
 height = 86.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcsvm"]
+radius = 384.0
+
 [node name="Hydra" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_oyrvh")
 
@@ -117,6 +120,11 @@ position = Vector2(-13, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8pr3v")
 
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_vcsvm")
+
 [node name="Label" parent="." instance=ExtResource("13_j88x7")]
 z_index = 10
 offset_left = -327.0
@@ -126,3 +134,4 @@ offset_bottom = -6.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="impale" to="." method="_on_impale_body_entered"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

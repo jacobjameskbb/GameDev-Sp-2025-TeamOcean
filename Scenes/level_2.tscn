@@ -59,3 +59,4 @@ position = Vector2(1210, -360)
 
 [node name="Current" parent="." instance=ExtResource("4_y0168")]
 position = Vector2(2080, -416)
+destination = &"19191919"
