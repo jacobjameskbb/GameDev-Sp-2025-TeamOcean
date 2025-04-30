@@ -17,8 +17,6 @@ var item_keys: Dictionary = {
 var item_cost: Dictionary = {
 	&"Stun" : 12,
 	&"Explosive" : 20,
-	
-	
 }
 
 
