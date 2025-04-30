@@ -27,3 +27,21 @@ func place_item(item):
 	new_sellable_item.cost = Global.item_cost[item]
 	
 	container.add_child(new_sellable_item)
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group(&"Player"):
+		open_shop()
+
+
+func _on_area_2d_body_exited(body):
+	pass # Replace with function body.
+
+
+func open_shop():
+	pass
+	
+	
+	
+	
+	

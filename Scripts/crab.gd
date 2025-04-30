@@ -3,7 +3,7 @@ extends CharacterBody2D
 # Crab Statistics
 var speed = 48
 
-var health = 1
+var health = 2
 
 # Crab Combat
 var damage: float = 1

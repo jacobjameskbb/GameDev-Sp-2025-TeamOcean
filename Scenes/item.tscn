@@ -24,7 +24,7 @@ anchors_preset = -1
 anchor_right = 0.523
 anchor_bottom = 1.0
 offset_right = 0.0559998
-text = "Upgrade"
+text = "Upgrade:"
 
 [node name="Cost" type="Label" parent="."]
 layout_mode = 1
