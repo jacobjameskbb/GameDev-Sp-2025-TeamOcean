@@ -80,7 +80,7 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func damaged(dmg):
-	if not global_position.distance_to(get_parent().player.global_position) >= 200:
+	if not global_position.distance_to(get_parent().player.global_position) >= 300:
 		health -= dmg
 		print("ding")
 		if health <= 0:
@@ -89,4 +89,4 @@ func damaged(dmg):
 
 func _on_impale_body_entered(body):
 	if body.is_in_group(&"Player"):
-		body.damaged(99)
+		body.damaged(5)
