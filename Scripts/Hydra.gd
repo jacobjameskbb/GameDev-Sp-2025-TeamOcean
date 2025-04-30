@@ -26,6 +26,12 @@ func _process(delta):
 			countDownSecs -= 1 * delta
 		
 		
+		if global_position.distance_to(get_parent().player.global_position) > 300:
+			$Label.visible = true
+		else:
+			$Label.visible = false
+		
+		
 		$AnimatedSprite2D.play(stateKeys[state])
 		
 		
@@ -80,7 +86,7 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func damaged(dmg):
-	if not global_position.distance_to(get_parent().player.global_position) >= 300:
+	if not global_position.distance_to(get_parent().player.global_position) >= 200:
 		health -= dmg
 		print("ding")
 		if health <= 0:

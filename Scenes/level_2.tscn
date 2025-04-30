@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="1_28y0n"]
 [ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="1_si7w6"]
 [ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="3_vmkf4"]
-[ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="4_y0168"]
+[ext_resource type="PackedScene" path="res://Scenes/current.tscn" id="4_y0168"]
 
 [node name="Level_2" type="Node"]
 

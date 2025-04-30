@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bx1fri4r0jp1e"]
+
+[node name="Label" type="Label"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -89.0
+offset_top = -10.0
+offset_right = 201.0
+offset_bottom = 52.0
+text = "HYDRA OUT OF RANGE"
