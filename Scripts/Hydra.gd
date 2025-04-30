@@ -1,7 +1,25 @@
 extends CharacterBody2D
+
 var abilities = {"Explosive": false}
-var stateKeys = {0:"idle", 1:"bShoot", 2:"Shoot", 3:"fShoot", 4:"impale", 5:"idle", 6:"idle", 7:"idle", 8:"idle", 9:"idle", 10:"idle", 11:"idle", 12:"idle", 13:"idle", 14:"idle", 15:"idle", 16:"idle"}
-var active = false
+var stateKeys = {
+	0:"idle",
+	1:"bShoot",
+	2:"Shoot",
+	3:"fShoot",
+	4:"impale",
+	5:"idle",
+	6:"idle",
+	7:"idle",
+	8:"idle",
+	9:"idle",
+	10:"idle",
+	11:"idle",
+	12:"idle",
+	13:"idle",
+	14:"idle",
+	15:"idle",
+	16:"idle"}
+
 var state = 0
 var frame = 0
 var countDownSecs = 0
@@ -14,22 +32,15 @@ var target: Object
 
 func _ready():
 	$impale.monitoring = false
-	
 
 
 func _process(delta):
-	if active == true:
+	if target != null:
 		if frame == 0:
 			state = 0
 			countDownSecs = 3
 		if reached == 0:
 			countDownSecs -= 1 * delta
-		
-		
-		if global_position.distance_to(get_parent().player.global_position) > 250:
-			$Label.visible = true
-		else:
-			$Label.visible = false
 		
 		
 		$AnimatedSprite2D.play(stateKeys[state])
@@ -67,8 +78,7 @@ func _on_animated_sprite_2d_animation_finished():
 				state = randi_range(0, 16)
 				
 				
-	print(state)
-	print($AnimatedSprite2D.frame)
+	
 	if state == 1 or state == 2 or state == 3:
 		var firei = fire.instantiate()
 		firei.shooter = self
@@ -86,9 +96,8 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func damaged(dmg):
-	if not global_position.distance_to(target.global_position) >= 250:
+	if target != null:
 		health -= dmg
-		print("ding")
 		if health <= 0:
 			queue_free()
 
@@ -99,5 +108,6 @@ func _on_impale_body_entered(body):
 
 
 func _on_detection_body_entered(body):
+	print("ding")
 	if body.is_in_group(&"Player"):
 		target = body
