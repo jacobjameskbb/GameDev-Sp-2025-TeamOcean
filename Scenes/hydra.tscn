@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dyjpg608d6cq4"]
 
-[ext_resource type="Script" path="res://Scripts/Hydra.gd" id="1_oyrvh"]
+[ext_resource type="Script" path="res://Scripts/hydra.gd" id="1_oyrvh"]
 [ext_resource type="Texture2D" uid="uid://dasr140x82n3b" path="res://Sprites/Hydra_0008.png" id="2_x1x4i"]
 [ext_resource type="Texture2D" uid="uid://cohck5gux7jks" path="res://Sprites/Hydra_0010.png" id="3_dfkgv"]
 [ext_resource type="Texture2D" uid="uid://c1oi7adw0u1ug" path="res://Sprites/Hydra_0009.png" id="4_q6m0v"]

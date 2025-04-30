@@ -132,7 +132,7 @@ func increase_gravity():
 func damaged(damage_amount := 1):
 	health -= 1 * damage_amount
 	if health < 1:
-		Global.load_scene(&"00000000")
+		Global.call_deferred("load_scene", &"00000000")
 
 
 func increase_pearls():

@@ -15,7 +15,8 @@ var health = 100
 func _ready():
 	$impale.monitoring = false
 	
-	
+
+
 func _process(delta):
 	if active == true:
 		if frame == 0:
@@ -76,14 +77,14 @@ func _on_animated_sprite_2d_animation_finished():
 		else:
 			firei.direction = Vector2(-1, 0)
 		get_parent().add_child(firei)
+
+
 func damaged(dmg):
 	if not global_position.distance_to(get_parent().player.global_position) >= 200:
 		health -= dmg
 		print("ding")
 		if health <= 0:
 			queue_free()
-
-		
 
 
 func _on_impale_body_entered(body):
