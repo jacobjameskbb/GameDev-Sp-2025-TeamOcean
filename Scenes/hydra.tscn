@@ -117,6 +117,10 @@ position = Vector2(-13, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8pr3v")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
 [node name="Label" parent="." instance=ExtResource("13_j88x7")]
 z_index = 10
 offset_left = -327.0
@@ -126,3 +130,4 @@ offset_bottom = -6.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="impale" to="." method="_on_impale_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
