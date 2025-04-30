@@ -1,7 +1,7 @@
 extends CharacterBody2D
 var abilities = {"Explosive": false}
 var stateKeys = {0:"idle", 1:"bShoot", 2:"Shoot", 3:"fShoot", 4:"impale", 5:"idle", 6:"idle", 7:"idle", 8:"idle", 9:"idle", 10:"idle", 11:"idle", 12:"idle", 13:"idle", 14:"idle", 15:"idle", 16:"idle"}
-var active = true
+var active = false
 var state = 0
 var frame = 0
 var countDownSecs = 0
