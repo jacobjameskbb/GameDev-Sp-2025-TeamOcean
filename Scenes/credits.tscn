@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dctoe37vwbolq"]
+
+[node name="Credits" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.173
+anchor_bottom = 0.356
+offset_right = -0.296005
+offset_bottom = 0.311996
+text = "Credits:
+
+Programming: Easton, Joe
+
+Art: Easton, Daniel, Tim
+
+Music: Huck
+
+Thanks for playing!"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.833
+anchor_top = 0.79
+anchor_right = 0.944
+anchor_bottom = 0.889
+offset_left = 0.383911
+offset_top = 0.0799866
+offset_right = 0.511963
+offset_bottom = -0.0720215
+text = "Exit"

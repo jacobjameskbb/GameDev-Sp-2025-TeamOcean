@@ -83,6 +83,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed(&"Left"):
 		$AnimatedSprite2D.play(&"walking")
+		
+		if SoundBus.playing_sound(&"Walk") == false and is_on_floor():
+			SoundBus.play_sound(&"Walk")
+		
 		velocity.x += -1 * delta * SPEED * 1000
 		
 		if self.flipped == 1 and Input.is_action_pressed(&"Right") == false:
@@ -93,6 +97,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed(&"Right"):
 		$AnimatedSprite2D.play(&"walking")
+		
+		if SoundBus.playing_sound(&"Walk") == false and is_on_floor():
+			SoundBus.play_sound(&"Walk")
+		
 		velocity.x += 1 * delta * SPEED * 1000
 		
 		if self.flipped == -1 and Input.is_action_pressed(&"Left") == false:
@@ -130,6 +138,7 @@ func increase_gravity():
 func damaged(damage_amount := 1):
 	health -= 1 * damage_amount
 	if health < 1:
+		SoundBus.play_sound(&"Loser")
 		Global.call_deferred(&"load_scene", &"00000000")
 
 

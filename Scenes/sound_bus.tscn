@@ -1,0 +1,46 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjnxewe7dby3e"]
+
+[ext_resource type="Script" path="res://Scripts/sound_bus.gd" id="1_5h1n2"]
+[ext_resource type="AudioStream" uid="uid://ci51p5ybes3e7" path="res://Sounds/bubbles.wav" id="2_q0uvg"]
+[ext_resource type="AudioStream" uid="uid://dq12oko6hgbhu" path="res://Sounds/coin1.wav" id="3_n1l20"]
+[ext_resource type="AudioStream" uid="uid://c16k8sapaq7sc" path="res://Sounds/coin2.wav" id="4_04ya2"]
+[ext_resource type="AudioStream" uid="uid://fmy3o80uyvo0" path="res://Sounds/crunch.wav" id="5_82ycy"]
+[ext_resource type="AudioStream" uid="uid://bmn1q7nq6epfl" path="res://Sounds/ghost.wav" id="6_lixue"]
+[ext_resource type="AudioStream" uid="uid://dwc1oqco6b0oh" path="res://Sounds/harpoon.wav" id="7_5d6j8"]
+[ext_resource type="AudioStream" uid="uid://bkcorxbjscddt" path="res://Sounds/map.wav" id="8_c0l0n"]
+[ext_resource type="AudioStream" uid="uid://b8yi1a33unccp" path="res://Sounds/walk.wav" id="9_nwi25"]
+[ext_resource type="AudioStream" uid="uid://dyv8ylpglg7ul" path="res://Sounds/Music/flourish.wav" id="10_1oa1s"]
+[ext_resource type="AudioStream" uid="uid://d3ejvhh4eu33a" path="res://Sounds/Music/loser.wav" id="11_two2b"]
+
+[node name="SoundBus" type="Node"]
+script = ExtResource("1_5h1n2")
+
+[node name="Bubbles" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q0uvg")
+
+[node name="Coin1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n1l20")
+
+[node name="Coin2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_04ya2")
+
+[node name="Crunch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_82ycy")
+
+[node name="Ghost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lixue")
+
+[node name="Harpoon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5d6j8")
+
+[node name="Map" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_c0l0n")
+
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_nwi25")
+
+[node name="Flourish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1oa1s")
+
+[node name="Loser" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_two2b")

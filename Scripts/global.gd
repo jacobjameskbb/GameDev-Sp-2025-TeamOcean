@@ -6,6 +6,7 @@ var scene_keys: Dictionary = {
 	&"73824691" : &"res://Scenes/level_1.tscn",
 	&"19285564" : &"res://Scenes/level_2.tscn",
 	&"19191919" : &"res://Scenes/level_3.tscn",
+	&"91199119" : &"res://Scenes/credits.tscn",
 }
 
 var item_keys: Dictionary = {
@@ -109,5 +110,7 @@ func make_bullet(bullet_owner: Object, bullet_direction):
 	bullet_scene.position = bullet_owner.position
 	
 	bullet_scene.direction = bullet_direction
+	
+	SoundBus.play_sound(&"Harpoon")
 	
 	get_tree().current_scene.add_child(bullet_scene)

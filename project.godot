@@ -20,6 +20,7 @@ run/canvas_textures/default_texture_filter=1
 [autoload]
 
 Global="*res://Scripts/global.gd"
+SoundBus="*res://Scenes/sound_bus.tscn"
 
 [display]
 
