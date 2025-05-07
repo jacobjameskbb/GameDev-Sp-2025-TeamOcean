@@ -53,4 +53,4 @@ position = Vector2(1452, 90)
 position = Vector2(3207, 210)
 
 [node name="Current" parent="." instance=ExtResource("7_oojy4")]
-position = Vector2(3648, 192)
+position = Vector2(3640, 160)

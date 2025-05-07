@@ -1,9 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci5ttwginfga8"]
+[gd_scene load_steps=5 format=3 uid="uid://ci5ttwginfga8"]
 
 [ext_resource type="Script" path="res://Scripts/current.gd" id="1_sfctm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pnvih"]
-radius = 64.4981
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxjs2"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_2b7qm"]
+resource_name = "flowing_current"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(24, -16), Vector2(64, -80)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m38vb"]
+_data = {
+"flowing_current": SubResource("Animation_2b7qm")
+}
 
 [node name="Current" type="Node2D"]
 script = ExtResource("1_sfctm")
@@ -13,6 +33,13 @@ collision_layer = 0
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_pnvih")
+shape = SubResource("RectangleShape2D_pxjs2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_m38vb")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
