@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var loot_level: int = 1
 
@@ -44,3 +44,11 @@ func open_shop():
 
 func close_shop():
 	$ShopInterface.visible = false
+
+
+func _on_shop_interface_mouse_entered():
+	Global.mouse_in_menu = true
+
+
+func _on_shop_interface_mouse_exited():
+	Global.mouse_in_menu = false

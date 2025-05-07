@@ -6,10 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dpixv"]
 radius = 160.798
 
-[node name="Shop" type="Node"]
+[node name="Shop" type="Node2D"]
 script = ExtResource("1_xg128")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_dpixv")
@@ -55,3 +56,5 @@ size_flags_vertical = 3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="ShopInterface" to="." method="_on_shop_interface_mouse_entered"]
+[connection signal="mouse_exited" from="ShopInterface" to="." method="_on_shop_interface_mouse_exited"]

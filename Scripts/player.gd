@@ -1,5 +1,7 @@
 extends CharacterBody2D
+
 var locked = null
+
 var health = 3
 
 var abilities = {
@@ -63,8 +65,7 @@ func _physics_process(delta):
 	
 	gun_position = $Gun.position
 	
-	if Input.is_action_just_released(&"Fire") and preparing_gun == false:
-		
+	if Input.is_action_just_released(&"Fire") and preparing_gun == false and not Global.mouse_in_menu:
 		fire_bullet()
 	
 	velocity.x = 0

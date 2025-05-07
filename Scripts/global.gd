@@ -37,6 +37,8 @@ var loot_table = {
 
 var pearls: int = 0
 
+var mouse_in_menu = false
+
 
 func _physics_process(_delta):
 	if Input.is_action_just_released(&"OpenMenu") and get_tree().get_first_node_in_group(&"Player") != null:
