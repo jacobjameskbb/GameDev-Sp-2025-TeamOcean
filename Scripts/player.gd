@@ -41,7 +41,7 @@ var bounce_delay = 0.5
 
 
 func _ready():
-	$Pearls.text = str("Pearls: ", Global.pearls)
+	$Pearls/PearlsLabel.text = str(Global.pearls)
 
 
 func _process(_delta):
@@ -88,8 +88,8 @@ func _physics_process(delta):
 		if self.flipped == 1 and Input.is_action_pressed(&"Right") == false:
 			self.scale.x = -1
 			self.flipped = -1
-			$Pearls.scale.x = -0.25
-			$Pearls.position = Vector2(288, -160)
+			$Pearls.scale.x = -1
+			#$Pearls.position = Vector2(144, -80)
 	
 	if Input.is_action_pressed(&"Right"):
 		$AnimatedSprite2D.play(&"walking")
@@ -98,8 +98,8 @@ func _physics_process(delta):
 		if self.flipped == -1 and Input.is_action_pressed(&"Left") == false:
 			self.scale.x = -1
 			self.flipped = 1
-			$Pearls.scale.x = 0.25
-			$Pearls.position = Vector2(-288, -160)
+			$Pearls.scale.x = 1
+			#$Pearls.position = Vector2(-144, -80)
 	
 	if Input.is_action_pressed(&"Right") == false and Input.is_action_pressed(&"Left") == false:
 		$AnimatedSprite2D.play(&"default")
@@ -130,10 +130,10 @@ func increase_gravity():
 func damaged(damage_amount := 1):
 	health -= 1 * damage_amount
 	if health < 1:
-		Global.call_deferred("load_scene", &"00000000")
+		Global.call_deferred(&"load_scene", &"00000000")
 
 
 func increase_pearls():
 	Global.pearls += 1
 	
-	$Pearls.text = str("Pearls: ", Global.pearls)
+	$Pearls/PearlsLabel.text = str(Global.pearls)

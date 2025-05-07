@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1errsfhdk6at"]
 
-[ext_resource type="Texture2D" uid="uid://cfbg4japqg03y" path="res://Sprites/icon.svg" id="1_1stvv"]
 [ext_resource type="Script" path="res://Scripts/shop.gd" id="1_xg128"]
+[ext_resource type="Texture2D" uid="uid://dep3lv33pbgww" path="res://Sprites/Shop.png" id="2_6hr7q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dpixv"]
 radius = 160.798
@@ -15,7 +15,9 @@ script = ExtResource("1_xg128")
 shape = SubResource("CircleShape2D_dpixv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1stvv")
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(2, 2)
+texture = ExtResource("2_6hr7q")
 
 [node name="ShopInterface" type="Control" parent="."]
 visible = false

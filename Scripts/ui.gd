@@ -1,7 +1,7 @@
 extends Control
 
 func _on_start_button_up():
-	Global.load_scene("73824691")
+	Global.load_scene(&"73824691")
 
 
 func _on_load_button_up():

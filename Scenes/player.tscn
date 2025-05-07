@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://djdbeoiwffj44"]
+[gd_scene load_steps=9 format=3 uid="uid://djdbeoiwffj44"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_sk7cf"]
 [ext_resource type="Texture2D" uid="uid://cv57dry6y57i1" path="res://Sprites/player.png" id="2_vixsn"]
 [ext_resource type="Texture2D" uid="uid://swo5hy5hukbh" path="res://Sprites/player arms.png" id="3_7ne5g"]
 [ext_resource type="Texture2D" uid="uid://dwtw8bxf2p8u6" path="res://Sprites/player walk 1.png" id="3_gcgfs"]
+[ext_resource type="Texture2D" uid="uid://dbqpo5s37k78m" path="res://Sprites/Sprite pink pearl-export.png" id="5_qpx4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvtwc"]
 size = Vector2(13, 25)
@@ -54,11 +55,20 @@ animation = &"walking"
 texture = ExtResource("3_7ne5g")
 offset = Vector2(6, 0)
 
-[node name="Pearls" type="Label" parent="."]
-offset_left = -288.0
-offset_top = -160.0
-offset_right = -26.0
-offset_bottom = -72.0
+[node name="Pearls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Pearls"]
+position = Vector2(-273, -147)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_qpx4k")
+
+[node name="PearlsLabel" type="Label" parent="Pearls"]
+offset_left = -258.0
+offset_top = -158.0
+offset_right = 4.0
+offset_bottom = -70.0
 scale = Vector2(0.25, 0.25)
-text = "Pearls: 0"
+text = "0"
 label_settings = SubResource("LabelSettings_txxox")
