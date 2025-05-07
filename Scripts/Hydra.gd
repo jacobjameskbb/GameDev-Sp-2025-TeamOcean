@@ -103,8 +103,9 @@ func damaged(dmg):
 
 
 func _on_impale_body_entered(body):
-	if body.is_in_group(&"Player"):
-		body.damaged(5)
+	if target != null:
+		if body.is_in_group(&"Player"):
+			body.damaged(5)
 
 
 func _on_detection_body_entered(body):

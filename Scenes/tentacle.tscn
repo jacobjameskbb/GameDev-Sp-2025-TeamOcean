@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://csj1j0up7ru6e"]
+
+[ext_resource type="Texture2D" uid="uid://rcs2b66hvrkv" path="res://Sprites/Kraken tentacles1.png" id="1_okp2k"]
+[ext_resource type="Texture2D" uid="uid://kq3k6mk4r1hu" path="res://Sprites/Kraken tentacles2.png" id="2_qeo4s"]
+[ext_resource type="Texture2D" uid="uid://dbumb3rktqtq3" path="res://Sprites/Kraken tentacles3.png" id="3_h5lcj"]
+[ext_resource type="Texture2D" uid="uid://drn1c7wikx6xa" path="res://Sprites/Kraken tentacles4.png" id="4_8audw"]
+[ext_resource type="Texture2D" uid="uid://cbdbx7wp1wisu" path="res://Sprites/Kraken tentacles5.png" id="5_g85eb"]
+[ext_resource type="Texture2D" uid="uid://p53j3lpbuau6" path="res://Sprites/Kraken tentacles6.png" id="6_quh6j"]
+[ext_resource type="Texture2D" uid="uid://bkmxf3ssknvbx" path="res://Sprites/Kraken tentacles7.png" id="7_rxepq"]
+[ext_resource type="Texture2D" uid="uid://d2wf2fem2lr21" path="res://Sprites/Kraken tentacles8.png" id="8_lkigj"]
+[ext_resource type="Texture2D" uid="uid://bud85slvlofew" path="res://Sprites/Kraken tentacles9.png" id="9_3w5sw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6n8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_okp2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qeo4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h5lcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8audw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g85eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_quh6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rxepq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lkigj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3w5sw")
+}],
+"loop": true,
+"name": &"tentacle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abvtu"]
+height = 72.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yy60r"]
+height = 72.0
+
+[node name="tentacle" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y6n8t")
+animation = &"tentacle"
+
+[node name="hit" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
+shape = SubResource("CapsuleShape2D_abvtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yy60r")
