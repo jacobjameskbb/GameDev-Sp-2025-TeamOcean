@@ -72,12 +72,7 @@ func _on_animated_sprite_2d_animation_finished():
 		state = 0
 	else:
 		state = randi_range(0, 16)
-		if state != 0:
-			state = randi_range(0, 16)
-			if state != 0:
-				state = randi_range(0, 16)
-				
-				
+
 	
 	if state == 1 or state == 2 or state == 3:
 		var firei = fire.instantiate()
