@@ -58,9 +58,9 @@ func load_shop(destination, loot_level):
 	if destination != null and loot_level != null:
 		get_tree().change_scene_to_file(&"res://Scenes/shop.tscn")
 		
-		get_tree().root.destination = destination
+		get_tree().current_scene.destination = destination
 		
-		get_tree().root.loot_level = loot_level
+		get_tree().current_scene.loot_level = loot_level
 
 
 func load_scene(key, destination = null, loot_level = null):
