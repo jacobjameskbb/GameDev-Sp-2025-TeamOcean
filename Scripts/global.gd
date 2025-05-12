@@ -54,9 +54,21 @@ func place_pause_menu():
 	get_tree().current_scene.add_child(new_pause_menu)
 
 
-func load_scene(key):
+func load_shop(destination, loot_level):
+	if destination != null and loot_level != null:
+		get_tree().change_scene_to_file(&"res://Scenes/shop.tscn")
+		
+		get_tree().root.destination = destination
+		
+		get_tree().root.loot_level = loot_level
+
+
+func load_scene(key, destination = null, loot_level = null):
 	if key not in scene_keys.keys():
-		return
+			if key == &"Shop" or key == &"shop":
+				load_shop(destination, loot_level)
+			else:
+				return
 	
 	current_scene = scene_keys[key]
 	

@@ -59,4 +59,6 @@ position = Vector2(2056, -57)
 
 [node name="Current" parent="." instance=ExtResource("5_rtmll")]
 position = Vector2(4136, -16)
-destination = &"19285564"
+destination = &"Shop"
+shop_destination = &"19285564"
+loot_level = &"1"
