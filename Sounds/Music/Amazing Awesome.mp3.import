@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqitya32o4rxw"
+path="res://.godot/imported/Amazing Awesome.mp3-0cc6ea5b6b2857249a7fd5ca740b13fe.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/Amazing Awesome.mp3"
+dest_files=["res://.godot/imported/Amazing Awesome.mp3-0cc6ea5b6b2857249a7fd5ca740b13fe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

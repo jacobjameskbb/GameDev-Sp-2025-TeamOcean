@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddx6dn0uw4vqh"
+path="res://.godot/imported/Under the Sea.mp3-aee040650196d9e7ae5b8257fe770d01.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/Under the Sea.mp3"
+dest_files=["res://.godot/imported/Under the Sea.mp3-aee040650196d9e7ae5b8257fe770d01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
