@@ -29,4 +29,4 @@ position = Vector2(376, -57)
 position = Vector2(1968, -352)
 destination = &"Shop"
 shop_destination = &"19191919"
-loot_level = &"2"
+loot_level = 2

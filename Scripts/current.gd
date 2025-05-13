@@ -4,7 +4,7 @@ extends Node2D
 
 @export var shop_destination: StringName
 
-@export var loot_level: StringName
+@export var loot_level: int
 
 @export var position_offset: Vector2
 
@@ -34,4 +34,4 @@ func change_scene(body: Object):
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "flowing_current":
-		Global.call_deferred(&"load_scene", destination, shop_destination, loot_level)
+		Global.call_deferred(&"load_scene", destination, shop_destination, int(loot_level))

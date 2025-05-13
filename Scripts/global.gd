@@ -56,22 +56,23 @@ func place_pause_menu():
 
 func load_shop(destination, loot_level):
 	if destination != null and loot_level != null:
-		get_tree().change_scene_to_file(&"res://Scenes/shop.tscn")
+		var new_scene = load("res://Scenes/shop_room.tscn").instantiate()
 		
-		await get_tree().tree_changed
+		new_scene.destination = destination
 		
-		call_deferred(&"assign_values", destination, loot_level)
-
-
-func assign_values(destination, loot_level):
-	get_tree().current_scene.destination = destination
-	
-	get_tree().current_scene.loot_level = loot_level
+		new_scene.loot_level = loot_level
+		
+		get_tree().root.add_child(new_scene)
+		
+		get_tree().current_scene.queue_free()
+		
+		get_tree().current_scene = new_scene
 
 
 func load_scene(key, destination = null, loot_level = null):
 	if key not in scene_keys.keys():
 			if key == &"Shop" or key == &"shop":
+				current_scene = &"res://Scenes/shop_room.tscn"
 				load_shop(destination, loot_level)
 				return
 			else:
