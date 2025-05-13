@@ -58,15 +58,22 @@ func load_shop(destination, loot_level):
 	if destination != null and loot_level != null:
 		get_tree().change_scene_to_file(&"res://Scenes/shop.tscn")
 		
-		get_tree().current_scene.destination = destination
+		await get_tree().tree_changed
 		
-		get_tree().current_scene.loot_level = loot_level
+		call_deferred(&"assign_values", destination, loot_level)
+
+
+func assign_values(destination, loot_level):
+	get_tree().current_scene.destination = destination
+	
+	get_tree().current_scene.loot_level = loot_level
 
 
 func load_scene(key, destination = null, loot_level = null):
 	if key not in scene_keys.keys():
 			if key == &"Shop" or key == &"shop":
 				load_shop(destination, loot_level)
+				return
 			else:
 				return
 	

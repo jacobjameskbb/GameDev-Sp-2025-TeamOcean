@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bmn1q7nq6epfl" path="res://Sounds/ghost.wav" id="6_lixue"]
 [ext_resource type="AudioStream" uid="uid://dwc1oqco6b0oh" path="res://Sounds/harpoon.wav" id="7_5d6j8"]
 [ext_resource type="AudioStream" uid="uid://bkcorxbjscddt" path="res://Sounds/map.wav" id="8_c0l0n"]
-[ext_resource type="AudioStream" uid="uid://b8yi1a33unccp" path="res://Sounds/walk.wav" id="9_nwi25"]
+[ext_resource type="AudioStream" uid="uid://bxnvgs3e3dv60" path="res://Sounds/walk.wav" id="9_nwi25"]
 [ext_resource type="AudioStream" uid="uid://dyv8ylpglg7ul" path="res://Sounds/Music/flourish.wav" id="10_1oa1s"]
 [ext_resource type="AudioStream" uid="uid://d3ejvhh4eu33a" path="res://Sounds/Music/loser.wav" id="11_two2b"]
 

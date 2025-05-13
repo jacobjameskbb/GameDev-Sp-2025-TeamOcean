@@ -18,7 +18,7 @@ var gun_position: Vector2
 #movement variables
 const GRAVITY = 2.5
 
-const SPEED = 4
+@export var speed = 4
 
 @export var terminal_velocity: int = 48
 
@@ -88,7 +88,7 @@ func _physics_process(delta):
 		if SoundBus.playing_sound(&"Walk") == false and is_on_floor():
 			SoundBus.play_sound(&"Walk")
 		
-		velocity.x += -1 * delta * SPEED * 1000
+		velocity.x += -1 * delta * speed * 1000
 		
 		if self.flipped == 1 and Input.is_action_pressed(&"Right") == false:
 			self.scale.x = -1
@@ -102,7 +102,7 @@ func _physics_process(delta):
 		if SoundBus.playing_sound(&"Walk") == false and is_on_floor():
 			SoundBus.play_sound(&"Walk")
 		
-		velocity.x += 1 * delta * SPEED * 1000
+		velocity.x += 1 * delta * speed * 1000
 		
 		if self.flipped == -1 and Input.is_action_pressed(&"Left") == false:
 			self.scale.x = -1

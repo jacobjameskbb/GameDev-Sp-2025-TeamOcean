@@ -26,6 +26,7 @@ texture = ExtResource("5_tsmmo")
 
 [node name="Player" parent="." instance=ExtResource("2_5gqjc")]
 position = Vector2(-224, 32)
+speed = 40
 
 [node name="crab" parent="." instance=ExtResource("4_ikj0h")]
 position = Vector2(16, 40)
