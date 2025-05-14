@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddgt17p67cgxi"]
+[gd_scene load_steps=6 format=3 uid="uid://c0u22le3hp8qk"]
 
 [ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="1_src3n"]
 [ext_resource type="Script" path="res://Scenes/level_easton.gd" id="1_y2we4"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_viuby"]
-[ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="3_mdlhx"]
-[ext_resource type="PackedScene" uid="uid://cvndd5rgvysmt" path="res://Scenes/treasure.tscn" id="5_v5vjw"]
+[ext_resource type="PackedScene" uid="uid://sgrimpocdn8j" path="res://Scenes/current.tscn" id="3_mdlhx"]
+[ext_resource type="PackedScene" uid="uid://ne8otuexaf7u" path="res://Scenes/treasure.tscn" id="5_v5vjw"]
 
 [node name="level_easton" type="Node"]
 script = ExtResource("1_y2we4")

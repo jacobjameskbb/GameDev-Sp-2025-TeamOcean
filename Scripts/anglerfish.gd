@@ -67,8 +67,8 @@ func attack():
 	
 	can_attack = true
 	
-	if target.has_method(&"damage") and target_in_area == true:
-		target.damage()
+	if target.has_method(&"damaged") and target_in_area == true:
+		target.damaged(damage)
 
 
 func stun():
