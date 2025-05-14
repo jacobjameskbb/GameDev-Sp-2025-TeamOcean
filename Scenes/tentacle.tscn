@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://csj1j0up7ru6e"]
+[gd_scene load_steps=14 format=3 uid="uid://csj1j0up7ru6e"]
 
+[ext_resource type="Script" path="res://Scripts/tentacle.gd" id="1_2fqcx"]
 [ext_resource type="Texture2D" uid="uid://rcs2b66hvrkv" path="res://Sprites/Kraken tentacles1.png" id="1_okp2k"]
 [ext_resource type="Texture2D" uid="uid://kq3k6mk4r1hu" path="res://Sprites/Kraken tentacles2.png" id="2_qeo4s"]
 [ext_resource type="Texture2D" uid="uid://dbumb3rktqtq3" path="res://Sprites/Kraken tentacles3.png" id="3_h5lcj"]
@@ -48,13 +49,26 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yy60r"]
 height = 72.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g1ipm"]
+radius = 80.0062
+
 [node name="tentacle" type="CharacterBody2D"]
 collision_layer = 6
 collision_mask = 0
+script = ExtResource("1_2fqcx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y6n8t")
 animation = &"tentacle"
+frame_progress = 0.683254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yy60r")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g1ipm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
