@@ -8,6 +8,7 @@ extends Node2D
 const loot_dictionary = {
 	1 : [&"Stun", &"Slow", &"Health"],
 	2 : [&"Explosive", &"Auto", &"Health"],
+	3 : [&"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health", &"Health"]
 }
 
 
