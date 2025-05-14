@@ -5,7 +5,7 @@ var speed = 64
 
 var health = 1
 
-var damage: float = 0.25
+var damage: int = 1
 
 var target: Object = self
 
