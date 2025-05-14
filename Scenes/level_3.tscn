@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="3_rqye5"]
 [ext_resource type="PackedScene" uid="uid://dv1b5jxstk0fr" path="res://Scenes/anglerfish.tscn" id="4_t4374"]
 [ext_resource type="PackedScene" uid="uid://dyjpg608d6cq4" path="res://Scenes/hydra.tscn" id="5_gyjwm"]
-[ext_resource type="PackedScene" uid="uid://sgrimpocdn8j" path="res://Scenes/current.tscn" id="7_oojy4"]
+[ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="7_oojy4"]
 
 [node name="level_3" type="Node"]
 
