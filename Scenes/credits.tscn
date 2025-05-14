@@ -47,6 +47,13 @@ offset_right = 142.0
 offset_bottom = 122.0
 flat = true
 
+[node name="Button4" type="Button" parent="."]
+offset_left = 63.0
+offset_top = 481.0
+offset_right = 255.0
+offset_bottom = 588.0
+text = "Keep items and restart"
+
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="Button3" to="." method="_on_button_3_button_up"]
