@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvndd5rgvysmt"]
+[gd_scene load_steps=11 format=3 uid="uid://ne8otuexaf7u"]
 
 [ext_resource type="Script" path="res://Scripts/treasure.gd" id="1_83vyn"]
 [ext_resource type="Texture2D" uid="uid://r151llf8x1k3" path="res://Sprites/Chest0.png" id="1_mmc1o"]
