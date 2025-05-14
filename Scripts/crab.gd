@@ -5,6 +5,8 @@ var speed = 48
 
 var health = 2
 
+var stunned = false
+
 # Crab Combat
 var damage: float = 1
 
@@ -18,9 +20,10 @@ var attack_cooldown: float = 0.5
 
 
 func _physics_process(_delta):
-	move()
+	if stunned == false:
+		move()
 	
-	if target_in_area and can_attack:
+	if target_in_area and can_attack and stunned == false:
 		attack()
 
 
@@ -58,6 +61,22 @@ func attack():
 	
 	if target.has_method(&"damaged") and target_in_area == true:
 		target.damaged()
+
+
+func stun():
+	self.stunned = true
+	
+	await get_tree().create_timer(3).timeout
+	
+	self.stunned = false
+
+
+func slow():
+	speed /= 2
+	
+	await get_tree().create_timer(3).timeout
+	
+	speed *= 2
 
 
 func _on_area_2d_body_entered(body):

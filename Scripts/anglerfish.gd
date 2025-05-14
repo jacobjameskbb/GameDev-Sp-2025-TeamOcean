@@ -15,13 +15,18 @@ var can_attack: bool = true
 
 var attack_cooldown: float = 0.5
 
+var stunned = false
+
+var slowed = false
+
 
 func _physics_process(_delta):
-	move()
+	if stunned == false:
+		move()
+		
+		$AnimatedSprite2D.play("walk")
 	
-	$AnimatedSprite2D.play("walk")
-	
-	if target_in_area and can_attack:
+	if target_in_area and can_attack and stunned == false:
 		attack()
 
 
@@ -64,6 +69,22 @@ func attack():
 	
 	if target.has_method(&"damage") and target_in_area == true:
 		target.damage()
+
+
+func stun():
+	self.stunned = true
+	
+	await get_tree().create_timer(3).timeout
+	
+	self.stunned = false
+
+
+func slow():
+	speed /= 2
+	
+	await get_tree().create_timer(3).timeout
+	
+	speed *= 2
 
 
 func _on_detect_body_entered(body):
