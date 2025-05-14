@@ -74,7 +74,7 @@ func attack():
 func stun():
 	self.stunned = true
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(0.5).timeout
 	
 	self.stunned = false
 
@@ -82,7 +82,7 @@ func stun():
 func slow():
 	speed /= 2
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	
 	speed *= 2
 

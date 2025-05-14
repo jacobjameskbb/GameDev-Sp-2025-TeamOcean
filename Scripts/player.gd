@@ -150,6 +150,9 @@ func fire_bullet():
 	
 	preparing_gun = true
 	
+	if abilities[&"Stun"] == true and gun_cooldown != 1.5:
+		gun_cooldown = 1.5
+	
 	if abilities[&"Auto"] == true and gun_cooldown != 0.1:
 		gun_cooldown = 0.1
 	

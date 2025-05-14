@@ -57,6 +57,8 @@ func attack():
 	
 	await get_tree().create_timer(attack_cooldown).timeout
 	
+	SoundBus.play_sound(&"Crunch")
+	
 	can_attack = true
 	
 	if target.has_method(&"damaged") and target_in_area == true:
@@ -66,7 +68,7 @@ func attack():
 func stun():
 	self.stunned = true
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(0.5).timeout
 	
 	self.stunned = false
 
@@ -74,7 +76,7 @@ func stun():
 func slow():
 	speed /= 2
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	
 	speed *= 2
 

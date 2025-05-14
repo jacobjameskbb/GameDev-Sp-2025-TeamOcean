@@ -11,7 +11,7 @@ var scene_keys: Dictionary = {
 
 #item cost in pearls
 var item_cost: Dictionary = {
-	&"Stun" : 15,
+	&"Stun" : 20,
 	&"Explosive" : 20,
 	&"Auto" : 25,
 	&"Slow" : 8,
