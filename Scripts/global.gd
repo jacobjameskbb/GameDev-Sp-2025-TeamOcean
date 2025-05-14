@@ -11,11 +11,19 @@ var scene_keys: Dictionary = {
 
 #item cost in pearls
 var item_cost: Dictionary = {
-	&"Stun" : 10,
+	&"Stun" : 15,
 	&"Explosive" : 20,
-	&"Auto" : 15,
+	&"Auto" : 25,
 	&"Slow" : 8,
-	&"Health" : 6,
+	&"Health" : 10,
+}
+
+const abilities_template = {
+	&"Stun" : false,
+	&"Explosive" : false,
+	&"Slow" : false,
+	&"Auto" : false,
+	&"Health" : 0,
 }
 
 var abilities = {

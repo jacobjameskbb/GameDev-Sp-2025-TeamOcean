@@ -78,6 +78,7 @@ label_settings = SubResource("LabelSettings_txxox")
 
 [node name="HealthControl" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 0
 offset_left = -280.0
 offset_top = 136.0
 offset_right = 280.0

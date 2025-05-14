@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcgcxbcgw3afb"]
+[gd_scene load_steps=4 format=3 uid="uid://bcgcxbcgw3afb"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7gdau"]
 [ext_resource type="Texture2D" uid="uid://bfud2w45xvw62" path="res://Sprites/Background.png" id="2_trqkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_72asd"]
+font_size = 64
+font_color = Color(0, 0, 1, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -67,6 +73,15 @@ offset_top = 0.0399933
 offset_right = 0.384003
 offset_bottom = -0.112
 text = "Quit"
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 96.0
+offset_right = 1138.0
+offset_bottom = 184.0
+text = "Bizness: Under the Sea"
+label_settings = SubResource("LabelSettings_72asd")
 
 [node name="LoadGameMenu" type="Control" parent="."]
 visible = false

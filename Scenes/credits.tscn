@@ -33,4 +33,20 @@ offset_right = 0.511963
 offset_bottom = -0.0720215
 text = "Exit"
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 151.0
+offset_top = 110.0
+offset_right = 179.0
+offset_bottom = 122.0
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 94.0
+offset_top = 110.0
+offset_right = 142.0
+offset_bottom = 122.0
+flat = true
+
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Button3" to="." method="_on_button_3_button_up"]

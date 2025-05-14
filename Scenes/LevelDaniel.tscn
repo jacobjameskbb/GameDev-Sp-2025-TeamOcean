@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://vdt8qeie8wk0"]
+[gd_scene load_steps=5 format=3 uid="uid://wqigwmm0a42h"]
 
+[ext_resource type="Script" path="res://Scripts/LevelDaniel.gd" id="1_ah26l"]
 [ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="1_d50h7"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_newtx"]
 [ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="3_826bt"]
 
 [node name="LevelDaniel" type="Node"]
+script = ExtResource("1_ah26l")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -504.0
@@ -12,6 +14,21 @@ offset_top = -268.0
 offset_right = 5222.0
 offset_bottom = 962.0
 color = Color(0.165552, 0.393528, 0.563779, 1)
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 633.0
+offset_top = 448.0
+offset_right = 698.0
+offset_bottom = 479.0
+text = "Restart"
+
+[node name="Button3" type="Button" parent="Button3"]
+layout_mode = 0
+offset_left = 1860.0
+offset_top = 124.0
+offset_right = 1925.0
+offset_bottom = 155.0
+text = "Restart"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_d50h7")
@@ -23,3 +40,22 @@ position = Vector2(16, 179)
 
 [node name="Current" parent="." instance=ExtResource("3_826bt")]
 position = Vector2(3268, 415)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1139.0
+offset_top = 440.0
+offset_right = 1204.0
+offset_bottom = 471.0
+text = "Restart"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1697.0
+offset_top = 518.0
+offset_right = 1794.0
+offset_bottom = 548.0
+text = "Restart"
+
+[connection signal="button_up" from="Button3" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button3/Button3" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_button_up"]

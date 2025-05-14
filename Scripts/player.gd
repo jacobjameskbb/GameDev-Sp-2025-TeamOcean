@@ -174,7 +174,12 @@ func damaged(damage_amount := 1):
 	health_control.health = health
 	
 	if health < 1:
+		Global.abilities = Global.abilities_template
+		
+		Global.pearls = 0
+		
 		SoundBus.play_sound(&"Loser")
+		
 		Global.call_deferred(&"load_scene", &"00000000")
 
 
