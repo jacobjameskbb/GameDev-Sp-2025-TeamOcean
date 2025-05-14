@@ -9,19 +9,22 @@ var scene_keys: Dictionary = {
 	&"91199119" : &"res://Scenes/credits.tscn",
 }
 
-var item_keys: Dictionary = {
-	&"72364581" : &"Stun",
-	&"36810972" : &"Explosive",
-}
-
 #item cost in pearls
 var item_cost: Dictionary = {
 	&"Stun" : 10,
 	&"Explosive" : 20,
 	&"Auto" : 15,
 	&"Slow" : 8,
+	&"Health" : 6,
 }
 
+var abilities = {
+	&"Stun" : false,
+	&"Explosive" : false,
+	&"Slow" : false,
+	&"Auto" : false,
+	&"Health" : 0,
+}
 
 #scene path
 var current_scene: StringName
@@ -87,11 +90,20 @@ func buy_item(item_key):
 	if pearls >= item_cost[item_key]:
 		pearls += -item_cost[item_key]
 		
+		get_tree().get_first_node_in_group(&"Player").pearls_label.text = str(pearls)
+		
 		give_item(item_key)
 
 
 func give_item(item_key):
-	get_tree().get_first_node_in_group(&"Player").abilities[item_key] = true
+	if typeof(get_tree().get_first_node_in_group(&"Player").abilities[item_key]) == TYPE_INT:
+		get_tree().get_first_node_in_group(&"Player").abilities[item_key] += 1
+		self.abilities[item_key] += 1
+		get_tree().get_first_node_in_group(&"Player").adjust_health()
+	
+	elif typeof(get_tree().get_first_node_in_group(&"Player").abilities[item_key]) == TYPE_BOOL:
+		get_tree().get_first_node_in_group(&"Player").abilities[item_key] = true
+		self.abilities[item_key] = true
 
 
 func enemy_death(type: StringName, position: Vector2):

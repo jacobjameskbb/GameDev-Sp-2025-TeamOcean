@@ -32,6 +32,7 @@ stream = ExtResource("6_lixue")
 
 [node name="Harpoon" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5d6j8")
+max_polyphony = 30
 
 [node name="Map" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_c0l0n")

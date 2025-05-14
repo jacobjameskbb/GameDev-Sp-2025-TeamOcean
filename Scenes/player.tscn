@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://djdbeoiwffj44"]
+[gd_scene load_steps=10 format=3 uid="uid://djdbeoiwffj44"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_sk7cf"]
 [ext_resource type="Texture2D" uid="uid://cv57dry6y57i1" path="res://Sprites/player.png" id="2_vixsn"]
 [ext_resource type="Texture2D" uid="uid://swo5hy5hukbh" path="res://Sprites/player arms.png" id="3_7ne5g"]
 [ext_resource type="Texture2D" uid="uid://dwtw8bxf2p8u6" path="res://Sprites/player walk 1.png" id="3_gcgfs"]
 [ext_resource type="Texture2D" uid="uid://dbqpo5s37k78m" path="res://Sprites/Sprite pink pearl-export.png" id="5_qpx4k"]
+[ext_resource type="Script" path="res://Scripts/health_control.gd" id="6_80dt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvtwc"]
 size = Vector2(13, 25)
@@ -58,6 +59,7 @@ offset = Vector2(6, 0)
 [node name="Pearls" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Pearls"]
 position = Vector2(-273, -147)
@@ -73,3 +75,21 @@ offset_bottom = -70.0
 scale = Vector2(0.25, 0.25)
 text = "0"
 label_settings = SubResource("LabelSettings_txxox")
+
+[node name="HealthControl" type="Control" parent="."]
+layout_mode = 3
+offset_left = -280.0
+offset_top = 136.0
+offset_right = 280.0
+offset_bottom = 149.0
+mouse_filter = 1
+script = ExtResource("6_80dt7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HealthControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true

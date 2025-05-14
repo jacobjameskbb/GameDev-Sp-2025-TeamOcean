@@ -6,16 +6,20 @@ extends Node2D
 
 # The contents of the lists in the dictionary should be StringNames
 const loot_dictionary = {
-	1 : [&"Stun", &"Slow"],
-	2 : [&"Explosive", &"Auto"],
-	3 : [],
-	4 : [],
+	1 : [&"Stun", &"Slow", &"Health"],
+	2 : [&"Explosive", &"Auto", &"Health"],
 }
 
 
 func _ready():
-	for item in loot_dictionary[loot_level]:
-		place_item(item)
+	if int(loot_level) in loot_dictionary.keys():
+		for item in loot_dictionary[loot_level]:
+			place_item(item)
+	else:
+		loot_level = 1
+		
+		for item in loot_dictionary[loot_level]:
+			place_item(item)
 
 
 func place_item(item):
