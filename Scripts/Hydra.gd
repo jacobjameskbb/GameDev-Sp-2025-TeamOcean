@@ -83,20 +83,20 @@ func _on_animated_sprite_2d_animation_finished():
 	else:
 		state = 0
 		
-		if state == 1 or state == 2 or state == 3:
-			var firei = fire.instantiate()
-			firei.shooter = self
-			if state == 1:
-				firei.global_position = Vector2(self.global_position.x- 10, self.global_position.y - 25)
-			if state == 2:
-				firei.global_position = Vector2(self.global_position.x- 25, self.global_position.y - 24)
-			if state == 3:
-				firei.global_position = Vector2(self.global_position.x- 24, self.global_position.y -14)
-			if target != null:
-				firei.direction = -(firei.global_position - target.global_position + -0.25 * target.velocity * firei.global_position.distance_to(target.global_position) / 300).normalized()
-			else:
-				firei.direction = Vector2(-1, 0)
-			get_parent().add_child(firei)
+	if state == 1 or state == 2 or state == 3:
+		var firei = fire.instantiate()
+		firei.shooter = self
+		if state == 1:
+			firei.global_position = Vector2(self.global_position.x- 10, self.global_position.y - 25)
+		if state == 2:
+			firei.global_position = Vector2(self.global_position.x- 25, self.global_position.y - 24)
+		if state == 3:
+			firei.global_position = Vector2(self.global_position.x- 24, self.global_position.y -14)
+		if target != null:
+			firei.direction = -(firei.global_position - target.global_position + -0.25 * target.velocity * firei.global_position.distance_to(target.global_position) / 300).normalized()
+		else:
+			firei.direction = Vector2(-1, 0)
+		get_parent().add_child(firei)
 
 
 func damaged(dmg):
