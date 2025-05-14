@@ -40,6 +40,7 @@ position = Vector2(16, 179)
 
 [node name="Current" parent="." instance=ExtResource("3_826bt")]
 position = Vector2(3268, 415)
+destination = &"91199119"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1139.0

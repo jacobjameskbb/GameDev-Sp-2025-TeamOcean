@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cymod6raul1uo"]
+[gd_scene load_steps=6 format=3 uid="uid://cymod6raul1uo"]
 
 [ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="1_dtp3i"]
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_ecgo5"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_48n7o"]
 [ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="3_dtkhv"]
+[ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="5_er3xg"]
 
 [node name="level_5" type="Node"]
 script = ExtResource("1_ecgo5")
@@ -51,5 +52,9 @@ offset_top = 69.0
 offset_right = 3447.0
 offset_bottom = 122.0
 text = "Exit"
+
+[node name="Current" parent="." instance=ExtResource("5_er3xg")]
+position = Vector2(3264, 128)
+destination = &"91199119"
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
