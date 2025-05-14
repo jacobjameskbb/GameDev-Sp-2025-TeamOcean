@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dctoe37vwbolq"]
+[gd_scene load_steps=2 format=3 uid="uid://dctoe37vwbolq"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_qpp0i"]
 
 [node name="Credits" type="Node"]
+script = ExtResource("1_qpp0i")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
@@ -14,7 +17,7 @@ Programming: Easton, Joe
 
 Art: Easton, Daniel, Tim
 
-Music: Huck
+Sound effects: Huck
 
 Thanks for playing!"
 
@@ -29,3 +32,5 @@ offset_top = 0.0799866
 offset_right = 0.511963
 offset_bottom = -0.0720215
 text = "Exit"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -56,15 +56,17 @@ func _ready():
 	
 	health_control = $HealthControl
 	
+	abilities = Global.abilities
+	
+	adjust_health()
+	
 	health_control.health = health
 	
 	pearls_label = $Pearls/PearlsLabel
-	
-	abilities = Global.abilities
 
 
 func adjust_health():
-	if max_health != max_health + abilities[&"Health"]:
+	while max_health != 3 + abilities[&"Health"]:
 		max_health += 1
 		health += 1
 	

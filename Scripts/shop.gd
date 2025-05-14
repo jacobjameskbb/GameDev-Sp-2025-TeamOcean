@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var loot_level: int = 1
+@export var loot_level: int
 
 @onready var container = $ShopInterface/ScrollContainer/VBoxContainer
 
@@ -12,10 +12,14 @@ const loot_dictionary = {
 
 
 func _ready():
+	await get_tree().process_frame
+	
 	if int(loot_level) in loot_dictionary.keys():
 		for item in loot_dictionary[loot_level]:
 			place_item(item)
 	else:
+		print(loot_level)
+		
 		loot_level = 1
 		
 		for item in loot_dictionary[loot_level]:

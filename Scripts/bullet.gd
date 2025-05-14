@@ -23,10 +23,12 @@ func _on_area_2d_body_entered(body):
 			body.damaged(damage)
 		
 		if shooter.abilities[&"Stun"] == true:
-			body.stun()
+			if body.has_method("stun"):
+				body.stun()
 		
 		if shooter.abilities[&"Slow"] == true:
-			body.slow()
+			if body.has_method("slow"):
+				body.slow()
 		
 		if shooter.abilities[&"Explosive"] == true:
 			Global.call_deferred(&"make_explosion", self.position)

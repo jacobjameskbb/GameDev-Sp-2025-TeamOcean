@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Oohs and Ahs.mp3-edf41b4c5afbd40cb62cc1839262
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjnxewe7dby3e"]
+[gd_scene load_steps=15 format=3 uid="uid://bjnxewe7dby3e"]
 
 [ext_resource type="Script" path="res://Scripts/sound_bus.gd" id="1_5h1n2"]
 [ext_resource type="AudioStream" uid="uid://ci51p5ybes3e7" path="res://Sounds/bubbles.wav" id="2_q0uvg"]
@@ -11,6 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://bxnvgs3e3dv60" path="res://Sounds/walk.wav" id="9_nwi25"]
 [ext_resource type="AudioStream" uid="uid://dyv8ylpglg7ul" path="res://Sounds/Music/flourish.wav" id="10_1oa1s"]
 [ext_resource type="AudioStream" uid="uid://d3ejvhh4eu33a" path="res://Sounds/Music/loser.wav" id="11_two2b"]
+[ext_resource type="AudioStream" uid="uid://gowt1yeudxmv" path="res://Sounds/Music/Oohs and Ahs.mp3" id="12_xxxnk"]
+[ext_resource type="AudioStream" uid="uid://us8paa413l4k" path="res://Sounds/Music/Under the sea Boss.mp3" id="13_6n2nj"]
+[ext_resource type="AudioStream" uid="uid://ddx6dn0uw4vqh" path="res://Sounds/Music/Under the Sea.mp3" id="14_cpige"]
 
 [node name="SoundBus" type="Node"]
 script = ExtResource("1_5h1n2")
@@ -45,3 +48,12 @@ stream = ExtResource("10_1oa1s")
 
 [node name="Loser" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_two2b")
+
+[node name="Oohs and Ahs" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_xxxnk")
+
+[node name="Under the sea Boss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_6n2nj")
+
+[node name="Under the sea" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_cpige")
