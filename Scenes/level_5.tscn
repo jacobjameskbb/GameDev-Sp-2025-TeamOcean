@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/level_5.gd" id="1_ecgo5"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_48n7o"]
 [ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="3_dtkhv"]
-[ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="5_er3xg"]
+[ext_resource type="PackedScene" uid="uid://sgrimpocdn8j" path="res://Scenes/current.tscn" id="5_er3xg"]
 
 [node name="level_5" type="Node"]
 script = ExtResource("1_ecgo5")

@@ -47,14 +47,17 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect"]
+position = Vector2(1, -2)
 shape = SubResource("CircleShape2D_h5d60")
 
 [node name="kill" type="Area2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(1.7, 1.7)
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill"]
-position = Vector2(-2.04359e-06, -3.50001)
+position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_vdhny")
 
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]

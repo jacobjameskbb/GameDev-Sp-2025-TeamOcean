@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="1_06hab"]
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_yk2u7"]
 [ext_resource type="PackedScene" uid="uid://1errsfhdk6at" path="res://Scenes/shop.tscn" id="3_b7ymx"]
-[ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="4_6t7jn"]
+[ext_resource type="PackedScene" uid="uid://sgrimpocdn8j" path="res://Scenes/current.tscn" id="4_6t7jn"]
 
 [node name="ShopRoom" type="Node"]
 script = ExtResource("1_1di3e")
