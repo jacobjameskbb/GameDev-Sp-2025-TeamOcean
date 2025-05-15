@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://djdbeoiwffj44" path="res://Scenes/player.tscn" id="2_5gqjc"]
 [ext_resource type="TileSet" uid="uid://yue2y1xx0rbe" path="res://Tilesets/tiles.tres" id="2_gr8h7"]
 [ext_resource type="PackedScene" uid="uid://fr25sami5vhh" path="res://Scenes/crab.tscn" id="4_ikj0h"]
-[ext_resource type="PackedScene" uid="uid://ci5ttwginfga8" path="res://Scenes/current.tscn" id="5_rtmll"]
+[ext_resource type="PackedScene" uid="uid://sgrimpocdn8j" path="res://Scenes/current.tscn" id="5_rtmll"]
 [ext_resource type="Texture2D" uid="uid://b8lsrje3u7tjn" path="res://Sprites/ShootSign.png" id="5_tsmmo"]
-[ext_resource type="PackedScene" uid="uid://cvndd5rgvysmt" path="res://Scenes/treasure.tscn" id="6_utppj"]
+[ext_resource type="PackedScene" uid="uid://ne8otuexaf7u" path="res://Scenes/treasure.tscn" id="6_utppj"]
 
 [node name="Level 1" type="Node"]
 
