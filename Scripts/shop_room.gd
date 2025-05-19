@@ -8,4 +8,3 @@ func _ready():
 	$Current.destination = destination
 	
 	$Shop.loot_level = loot_level
-

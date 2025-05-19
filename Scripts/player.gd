@@ -6,14 +6,6 @@ var health = 3
 
 var max_health = 3
 
-var abilities = {
-	&"Stun" : false,
-	&"Explosive" : false,
-	&"Slow" : false,
-	&"Auto" : false,
-	&"Health" : 0,
-}
-
 var gun_cooldown: float = 0.5
 
 var preparing_gun = false
@@ -56,8 +48,6 @@ func _ready():
 	
 	health_control = $HealthControl
 	
-	abilities = Global.abilities
-	
 	adjust_health()
 	
 	health_control.health = health
@@ -66,7 +56,8 @@ func _ready():
 
 
 func adjust_health():
-	while max_health != 3 + abilities[&"Health"]:
+	while max_health != 3 + Global.abilities[&"Health"]:
+		print(max_health, " ", Global.abilities[&"Health"])
 		max_health += 1
 		health += 1
 	
@@ -150,10 +141,10 @@ func fire_bullet():
 	
 	preparing_gun = true
 	
-	if abilities[&"Stun"] == true and gun_cooldown != 1.5:
-		gun_cooldown = 1.5
+	if Global.abilities[&"Stun"] == true and gun_cooldown != 1.75:
+		gun_cooldown = 1.75
 	
-	if abilities[&"Auto"] == true and gun_cooldown != 0.1:
+	if Global.abilities[&"Auto"] == true and gun_cooldown != 0.1:
 		gun_cooldown = 0.1
 	
 	await get_tree().create_timer(gun_cooldown).timeout
@@ -177,7 +168,7 @@ func damaged(damage_amount := 1):
 	health_control.health = health
 	
 	if health < 1:
-		Global.abilities = Global.abilities_template
+		Global.abilities = Dictionary(Global.abilities_template)
 		
 		Global.pearls = 0
 		

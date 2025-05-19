@@ -18,7 +18,7 @@ var item_cost: Dictionary = {
 	&"Health" : 10,
 }
 
-const abilities_template = {
+var abilities_template = {
 	&"Stun" : false,
 	&"Explosive" : false,
 	&"Slow" : false,
@@ -94,9 +94,11 @@ func load_scene(key, destination = null, loot_level = null):
 	get_tree().change_scene_to_file(current_scene)
 
 
-func buy_item(item_key):
+func buy_item(item_key, item_node):
 	if pearls >= item_cost[item_key]:
 		pearls += -item_cost[item_key]
+		
+		item_node.call_deferred(&"queue_free")
 		
 		get_tree().get_first_node_in_group(&"Player").pearls_label.text = str(pearls)
 		
@@ -104,13 +106,12 @@ func buy_item(item_key):
 
 
 func give_item(item_key):
-	if typeof(get_tree().get_first_node_in_group(&"Player").abilities[item_key]) == TYPE_INT:
-		get_tree().get_first_node_in_group(&"Player").abilities[item_key] += 1
+	if typeof(self.abilities[item_key]) == TYPE_INT:
 		self.abilities[item_key] += 1
+		
 		get_tree().get_first_node_in_group(&"Player").adjust_health()
 	
-	elif typeof(get_tree().get_first_node_in_group(&"Player").abilities[item_key]) == TYPE_BOOL:
-		get_tree().get_first_node_in_group(&"Player").abilities[item_key] = true
+	elif typeof(self.abilities[item_key]) == TYPE_BOOL:
 		self.abilities[item_key] = true
 
 

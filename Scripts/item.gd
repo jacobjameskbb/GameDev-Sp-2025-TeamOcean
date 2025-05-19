@@ -11,6 +11,4 @@ func _ready():
 
 
 func _on_button_up():
-	Global.buy_item(item_type)
-	
-	self.call_deferred(&"queue_free")
+	Global.buy_item(item_type, self)
